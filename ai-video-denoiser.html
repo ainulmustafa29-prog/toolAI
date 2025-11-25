@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Video Denoiser - Remove noise and grain from videos using AI.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Video Denoiser - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Video Denoiser</h1>
+            <p>Remove noise and grain from videos using AI denoising technology.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your video here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Video</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Original video will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Denoised Video</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Denoised video will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Denoise Video</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Video Denoiser in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Noisy Video</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your video file with noise or grain. Our AI video denoiser supports various video formats including MP4, MOV, AVI, WMV, MKV, and more. The video will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Remove Noise</h4>
+                            <p class="card-text">Click the "Denoise Video" button to start the AI denoising process. Our advanced algorithm will analyze each frame, detect noise patterns, and intelligently remove grain and artifacts while preserving important details and video sharpness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Clean Video</h4>
+                            <p class="card-text">Once denoising is complete, preview your clean video in the output area. Compare the denoised result with the original, and if satisfied, click the "Download" button to save your noise-free, professional video to your device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Video Denoiser</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="Video Denoiser.jpeg" alt="AI Video Denoiser Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Remove noise and grain from videos effortlessly with our AI Video Denoiser. This sophisticated tool uses advanced artificial intelligence and machine learning algorithms to analyze video frames, detect noise patterns, and intelligently remove grain, artifacts, and unwanted visual noise while preserving important details, textures, and video quality. Perfect for cleaning up low-light footage, high ISO recordings, compressed videos, or any video with visible noise or grain.</p>
+                    <p>Our AI denoising technology processes videos frame by frame, using temporal analysis to understand noise patterns across multiple frames and distinguish between noise and actual video content. The algorithm applies adaptive filtering that varies across different regions of each frame, preserving sharp edges and fine details while removing unwanted grain. Unlike basic noise reduction filters that can blur details, our AI maintains video sharpness and clarity while effectively eliminating noise. The tool works entirely in your browser for complete privacy, processes videos efficiently, and is completely free to use. Whether you're cleaning up old footage, improving low-light recordings, or preparing videos for professional use, our AI Video Denoiser delivers studio-quality results.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What types of noise can the AI Video Denoiser remove?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Video Denoiser can remove various types of noise including digital grain, compression artifacts, low-light noise, sensor noise, and compression artifacts. The tool is effective at removing both luminance noise (brightness variations) and chroma noise (color variations) while preserving video details and quality.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will denoising reduce video quality or sharpness?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, our AI Video Denoiser is specifically designed to preserve video quality and sharpness while removing noise. The algorithm uses intelligent filtering that distinguishes between noise and important details, ensuring that edges, textures, and fine details remain sharp and clear after denoising.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            How long does video denoising take?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Processing time varies based on video length, resolution, and noise level. Short videos (under 1 minute) typically process in 2-5 minutes, while longer videos may take 10-20 minutes. The denoising process analyzes each frame carefully, so processing time depends on video complexity and your device's performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Can I denoise videos shot in low light?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our AI Video Denoiser is particularly effective at cleaning up low-light footage. Videos shot in low light conditions often have high ISO noise, and our algorithm excels at removing this type of noise while preserving important details and maintaining natural appearance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will the audio be affected during denoising?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, the denoising process only affects video frames and visual elements, leaving audio tracks completely untouched. Your denoised video will have the same audio quality, synchronization, and all audio tracks as the original video file.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedVideoData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'video');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        processedVideoData = e.target.result;
+                        document.getElementById('processedPreview').innerHTML = `<video src="${processedVideoData}" controls style="max-width: 100%; max-height: 100%;"></video>`;
+                        document.getElementById('downloadBtn').disabled = false;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedVideoData && currentFile) {
+                    const link = document.createElement('a');
+                    link.href = processedVideoData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-denoised.' + currentFile.name.split('.').pop();
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

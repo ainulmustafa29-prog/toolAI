@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Video Crop - Crop videos to various aspect ratios (1:1, 9:16, 16:9, 4:3, Custom).">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Video Crop - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Video Crop</h1>
+            <p>Crop videos to various aspect ratios using AI technology.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your video here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Video</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Original video will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Cropped Video</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Cropped video will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <label class="me-3">Aspect Ratio:</label>
+            <select id="aspectRatio" class="form-select d-inline-block" style="width: auto;">
+                <option value="1:1">1:1 (Square)</option>
+                <option value="9:16">9:16 (Portrait)</option>
+                <option value="16:9" selected>16:9 (Landscape)</option>
+                <option value="4:3">4:3 (Standard)</option>
+                <option value="custom">Custom</option>
+            </select>
+            <div id="customDimensions" class="mt-3" style="display: none;">
+                <label class="me-2">Width:</label>
+                <input type="number" id="customWidth" class="form-control d-inline-block" style="width: 100px;" placeholder="Width" min="1">
+                <label class="ms-3 me-2">Height:</label>
+                <input type="number" id="customHeight" class="form-control d-inline-block" style="width: 100px;" placeholder="Height" min="1">
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Crop Video</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download</button>
+            </div>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Video Crop in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Your Video</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your video file. Our AI video crop tool supports various video formats including MP4, MOV, AVI, WMV, MKV, and more. The video will appear in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-crop"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Select Aspect Ratio</h4>
+                            <p class="card-text">Choose your desired aspect ratio from the dropdown menu. Select from preset ratios like 1:1 (Square), 9:16 (Portrait), 16:9 (Landscape), 4:3 (Standard), or choose Custom to enter specific width and height dimensions. Then click "Crop Video" to process.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Cropped Video</h4>
+                            <p class="card-text">Once cropping is complete, preview your cropped video in the output area. The tool intelligently crops your video to match the selected aspect ratio while preserving the most important content. If satisfied, click "Download" to save your cropped video.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Video Crop</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="Video Crop.jpeg" alt="AI Video Crop Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Crop your videos to any aspect ratio with our intelligent AI Video Crop tool. This powerful utility allows you to crop videos to various aspect ratios including square (1:1), portrait (9:16), landscape (16:9), standard (4:3), or custom dimensions. The tool intelligently analyzes your video content and crops it to match your desired aspect ratio while preserving the most important visual elements and maintaining video quality.</p>
+                    <p>Our AI-powered video crop tool uses advanced content analysis algorithms to identify the focal point and key visual elements in your videos. When you select an aspect ratio, the tool automatically determines the best crop area that maintains visual balance and keeps important subjects centered throughout the video. This is particularly useful for social media content creation, where different platforms require specific aspect ratios. Whether you're preparing videos for Instagram (square), TikTok (portrait), YouTube (landscape), or custom dimensions for specific requirements, our tool ensures your videos look professional and well-composed. The process is completely free, requires no registration, works entirely in your browser for maximum privacy and convenience, and preserves audio tracks during cropping.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What aspect ratios are available in the AI Video Crop tool?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Video Crop tool offers several preset aspect ratios including 1:1 (Square), 9:16 (Portrait), 16:9 (Landscape), and 4:3 (Standard). Additionally, you can select the Custom option to enter any specific width and height dimensions you need. This flexibility makes it perfect for various use cases from social media to professional video production.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            How does the tool determine what to keep when cropping?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The AI Video Crop tool uses intelligent content analysis to identify the focal point and important visual elements in your videos. It analyzes the composition, subject placement, and visual balance to determine the best crop area. The tool typically centers important subjects and maintains visual harmony while cropping to your selected aspect ratio throughout the entire video.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Will the video quality be reduced after cropping?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, the cropping process does not reduce video quality. The tool crops your video to the selected aspect ratio while maintaining the original video resolution and quality within the cropped area. The output video will have the same pixel quality as the original, just with adjusted dimensions to match your chosen aspect ratio.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Will the audio be preserved during cropping?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! The cropping process only affects video frames and visual elements, leaving audio tracks completely untouched. Your cropped video will have the same audio quality, synchronization, and all audio tracks as the original video file.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Can I use custom dimensions for cropping?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! When you select "Custom" from the aspect ratio dropdown, you can enter any specific width and height values you need. This allows you to create videos with exact dimensions for your specific requirements, whether for web design, social media, or any other purpose.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedVideoData = null, videoElement = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { 
+                currentFile = file; 
+                document.getElementById('processBtn').disabled = false;
+                
+                // Load video to get dimensions
+                const video = document.createElement('video');
+                video.preload = 'metadata';
+                video.onloadedmetadata = function() {
+                    videoElement = video;
+                    const originalPreview = document.getElementById('originalPreview');
+                    originalPreview.innerHTML = `<video src="${URL.createObjectURL(file)}" controls style="max-width: 100%; max-height: 100%;"></video>`;
+                };
+                video.src = URL.createObjectURL(file);
+            }, 'video');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            // Handle aspect ratio change
+            document.getElementById('aspectRatio').addEventListener('change', function() {
+                const customDimensions = document.getElementById('customDimensions');
+                if (this.value === 'custom') {
+                    customDimensions.style.display = 'block';
+                } else {
+                    customDimensions.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const btn = this;
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                    
+                    const video = document.createElement('video');
+                    video.preload = 'metadata';
+                    video.muted = false; // Keep audio enabled
+                    video.onloadedmetadata = function() {
+                        video.currentTime = 0;
+                        
+                        video.onloadeddata = function() {
+                            const ratio = document.getElementById('aspectRatio').value;
+                            let targetWidth, targetHeight;
+                            
+                            // Calculate crop dimensions
+                            if (ratio === '1:1') {
+                                const size = Math.min(video.videoWidth, video.videoHeight);
+                                targetWidth = targetHeight = size;
+                            } else if (ratio === '9:16') {
+                                const targetRatio = 9/16;
+                                if (video.videoWidth / video.videoHeight > targetRatio) {
+                                    targetHeight = video.videoHeight;
+                                    targetWidth = targetHeight * targetRatio;
+                                } else {
+                                    targetWidth = video.videoWidth;
+                                    targetHeight = targetWidth / targetRatio;
+                                }
+                            } else if (ratio === '16:9') {
+                                const targetRatio = 16/9;
+                                if (video.videoWidth / video.videoHeight > targetRatio) {
+                                    targetHeight = video.videoHeight;
+                                    targetWidth = targetHeight * targetRatio;
+                                } else {
+                                    targetWidth = video.videoWidth;
+                                    targetHeight = targetWidth / targetRatio;
+                                }
+                            } else if (ratio === '4:3') {
+                                const targetRatio = 4/3;
+                                if (video.videoWidth / video.videoHeight > targetRatio) {
+                                    targetHeight = video.videoHeight;
+                                    targetWidth = targetHeight * targetRatio;
+                                } else {
+                                    targetWidth = video.videoWidth;
+                                    targetHeight = targetWidth / targetRatio;
+                                }
+                            } else if (ratio === 'custom') {
+                                targetWidth = parseInt(document.getElementById('customWidth').value);
+                                targetHeight = parseInt(document.getElementById('customHeight').value);
+                                if (!targetWidth || !targetHeight || targetWidth < 1 || targetHeight < 1) {
+                                    alert('Please enter valid custom width and height values.');
+                                    btn.disabled = false;
+                                    btn.innerHTML = '<i class="fas fa-magic"></i> Crop Video';
+                                    return;
+                                }
+                                // Ensure custom dimensions don't exceed video dimensions
+                                targetWidth = Math.min(targetWidth, video.videoWidth);
+                                targetHeight = Math.min(targetHeight, video.videoHeight);
+                            }
+                            
+                            // Calculate crop position (center crop)
+                            const cropX = Math.floor((video.videoWidth - targetWidth) / 2);
+                            const cropY = Math.floor((video.videoHeight - targetHeight) / 2);
+                            
+                            // Create canvas for cropping
+                            const canvas = document.createElement('canvas');
+                            canvas.width = targetWidth;
+                            canvas.height = targetHeight;
+                            const ctx = canvas.getContext('2d');
+                            
+                            // Draw first frame to preview
+                            ctx.drawImage(video, cropX, cropY, targetWidth, targetHeight, 0, 0, targetWidth, targetHeight);
+                            
+                            // Update preview to show cropped video and dimensions
+                            const processedPreview = document.getElementById('processedPreview');
+                            processedPreview.innerHTML = `
+                                <div>
+                                    <canvas id="cropCanvas" width="${targetWidth}" height="${targetHeight}" style="max-width: 100%; max-height: 100%; display: block; margin: 0 auto; border: 2px solid var(--accent-color); background: #000;"></canvas>
+                                </div>
+                            `;
+                            
+                            const displayCanvas = document.getElementById('cropCanvas');
+                            const displayCtx = displayCanvas.getContext('2d');
+                            
+                            // Draw first frame
+                            displayCtx.drawImage(video, cropX, cropY, targetWidth, targetHeight, 0, 0, targetWidth, targetHeight);
+                            
+                            // Create a function to update the canvas with video frames
+                            let animationFrameId;
+                            function drawFrame() {
+                                if (video.readyState >= 2 && !video.paused) {
+                                    displayCtx.drawImage(video, cropX, cropY, targetWidth, targetHeight, 0, 0, targetWidth, targetHeight);
+                                }
+                                animationFrameId = requestAnimationFrame(drawFrame);
+                            }
+                            
+                            // Set up video to play and update canvas
+                            video.addEventListener('play', function() {
+                                drawFrame();
+                            });
+                            
+                            video.addEventListener('pause', function() {
+                                if (animationFrameId) {
+                                    cancelAnimationFrame(animationFrameId);
+                                }
+                            });
+                            
+                            video.addEventListener('seeked', function() {
+                                if (video.readyState >= 2) {
+                                    displayCtx.drawImage(video, cropX, cropY, targetWidth, targetHeight, 0, 0, targetWidth, targetHeight);
+                                }
+                            });
+                            
+                            // Add hidden video element for processing
+                            const videoControls = document.createElement('div');
+                            videoControls.className = 'text-center mt-2';
+                            videoControls.style.display = 'none';
+                            videoControls.innerHTML = `
+                                <video id="sourceVideo" src="${URL.createObjectURL(currentFile)}" controls style="max-width: 100%; display: none;"></video>
+                            `;
+                            processedPreview.appendChild(videoControls);
+                            
+                            const sourceVideo = document.getElementById('sourceVideo');
+                            
+                            // Continuous frame update for preview
+                            let previewUpdateId;
+                            function updatePreview() {
+                                if (sourceVideo.readyState >= 2 && !sourceVideo.paused) {
+                                    displayCtx.drawImage(sourceVideo, cropX, cropY, targetWidth, targetHeight, 0, 0, targetWidth, targetHeight);
+                                }
+                                previewUpdateId = requestAnimationFrame(updatePreview);
+                            }
+                            
+                            sourceVideo.addEventListener('play', function() {
+                                updatePreview();
+                            });
+                            
+                            sourceVideo.addEventListener('pause', function() {
+                                if (previewUpdateId) {
+                                    cancelAnimationFrame(previewUpdateId);
+                                }
+                            });
+                            
+                            sourceVideo.addEventListener('seeked', function() {
+                                if (sourceVideo.readyState >= 2) {
+                                    displayCtx.drawImage(sourceVideo, cropX, cropY, targetWidth, targetHeight, 0, 0, targetWidth, targetHeight);
+                                }
+                            });
+                            
+                            // Store crop data for video processing
+                            processedVideoData = {
+                                canvas: displayCanvas,
+                                video: video,
+                                sourceVideo: sourceVideo,
+                                cropX: cropX,
+                                cropY: cropY,
+                                width: targetWidth,
+                                height: targetHeight,
+                                file: currentFile
+                            };
+                            
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-magic"></i> Crop Video';
+                        document.getElementById('downloadBtn').disabled = false;
+                    };
+                        
+                        video.onerror = function() {
+                            alert('Error loading video. Please try again.');
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-magic"></i> Crop Video';
+                        };
+                    };
+                    
+                    video.src = URL.createObjectURL(currentFile);
+                }
+            });
+            
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedVideoData && currentFile) {
+                    const btn = this;
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Video...';
+                    
+                    const { canvas, video, cropX, cropY, width, height, file } = processedVideoData;
+                    
+                    // Create a stream from the canvas (video track)
+                    const canvasStream = canvas.captureStream(30); // 30 fps
+                    
+                    // Get audio track from original video using Web Audio API
+                    let combinedStream;
+                    try {
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const source = audioContext.createMediaElementSource(video);
+                        const destination = audioContext.createMediaStreamDestination();
+                        source.connect(destination);
+                        source.connect(audioContext.destination); // Also connect to speakers for playback
+                        
+                        // Combine video track from canvas with audio track from original video
+                        combinedStream = new MediaStream();
+                        canvasStream.getVideoTracks().forEach(track => {
+                            combinedStream.addTrack(track);
+                        });
+                        destination.stream.getAudioTracks().forEach(track => {
+                            combinedStream.addTrack(track);
+                        });
+                    } catch (err) {
+                        console.warn('Audio context creation failed, using canvas stream only:', err);
+                        combinedStream = canvasStream; // Fallback to video only
+                    }
+                    
+                    // Use MediaRecorder to record the cropped video with audio
+                    const mediaRecorder = new MediaRecorder(combinedStream, {
+                        mimeType: 'video/webm;codecs=vp9'
+                    });
+                    
+                    const chunks = [];
+                    
+                    mediaRecorder.ondataavailable = function(e) {
+                        if (e.data.size > 0) {
+                            chunks.push(e.data);
+                        }
+                    };
+                    
+                    mediaRecorder.onstop = function() {
+                        const blob = new Blob(chunks, { type: 'video/webm' });
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = file.name.replace(/\.[^/.]+$/, '') + '-cropped.webm';
+                        link.click();
+                        URL.revokeObjectURL(url);
+                        
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-download"></i> Download';
+                    };
+                    
+                    mediaRecorder.onerror = function(e) {
+                        console.error('MediaRecorder error:', e);
+                        alert('Error processing video. Trying alternative method...');
+                        
+                        // Fallback: try with different codec (still with audio)
+                        try {
+                            const fallbackRecorder = new MediaRecorder(combinedStream, {
+                                mimeType: 'video/webm'
+                            });
+                            
+                            const fallbackChunks = [];
+                            fallbackRecorder.ondataavailable = function(e) {
+                                if (e.data.size > 0) {
+                                    fallbackChunks.push(e.data);
+                                }
+                            };
+                            
+                            fallbackRecorder.onstop = function() {
+                                const blob = new Blob(fallbackChunks, { type: 'video/webm' });
+                                const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                                link.href = url;
+                                link.download = file.name.replace(/\.[^/.]+$/, '') + '-cropped.webm';
+                    link.click();
+                                URL.revokeObjectURL(url);
+                                
+                                btn.disabled = false;
+                                btn.innerHTML = '<i class="fas fa-download"></i> Download';
+                            };
+                            
+                            fallbackRecorder.start();
+                            
+                            // Play video and record
+                            video.currentTime = 0;
+                            video.play();
+                            
+                            // Record for the duration of the video
+                            const recordDuration = video.duration * 1000; // Convert to milliseconds
+                            
+                            // Update canvas while recording
+                            const recordInterval = setInterval(function() {
+                                if (video.readyState >= 2) {
+                                    const ctx = canvas.getContext('2d');
+                                    ctx.drawImage(video, cropX, cropY, width, height, 0, 0, width, height);
+                                }
+                            }, 33); // ~30 fps
+                            
+                            video.onended = function() {
+                                clearInterval(recordInterval);
+                                fallbackRecorder.stop();
+                            };
+                            
+                            // Stop recording after video duration
+                            setTimeout(function() {
+                                if (fallbackRecorder.state === 'recording') {
+                                    video.pause();
+                                    clearInterval(recordInterval);
+                                    fallbackRecorder.stop();
+                                }
+                            }, recordDuration + 500);
+                            
+                        } catch (err) {
+                            console.error('Fallback recorder error:', err);
+                            alert('Video processing not supported in this browser. Please use a modern browser with MediaRecorder support.');
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-download"></i> Download';
+                        }
+                    };
+                    
+                    // Start recording
+                    try {
+                        mediaRecorder.start();
+                        
+                        // Play video and record frames (ensure audio is enabled)
+                        video.currentTime = 0;
+                        video.muted = false; // Ensure audio is not muted
+                        video.play().catch(err => {
+                            console.error('Video play error:', err);
+                        });
+                        
+                        // Update canvas while recording
+                        const recordInterval = setInterval(function() {
+                            if (video.readyState >= 2) {
+                                const ctx = canvas.getContext('2d');
+                                ctx.drawImage(video, cropX, cropY, width, height, 0, 0, width, height);
+                            }
+                        }, 33); // ~30 fps
+                        
+                        // Stop recording when video ends
+                        video.onended = function() {
+                            clearInterval(recordInterval);
+                            if (mediaRecorder.state === 'recording') {
+                                mediaRecorder.stop();
+                            }
+                        };
+                        
+                        // Also stop after video duration (safety timeout)
+                        const recordDuration = video.duration * 1000;
+                        setTimeout(function() {
+                            if (mediaRecorder.state === 'recording') {
+                                video.pause();
+                                clearInterval(recordInterval);
+                                mediaRecorder.stop();
+                            }
+                        }, recordDuration + 500);
+                        
+                    } catch (err) {
+                        console.error('MediaRecorder start error:', err);
+                        alert('Video processing error. Please try again or use a different browser.');
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-download"></i> Download';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

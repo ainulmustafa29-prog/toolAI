@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Image Background Remover - Remove backgrounds from images automatically with AI precision.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Image Background Remover - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Image Background Remover</h1>
+            <p>Remove backgrounds from images automatically with AI precision.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Image</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original image will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Background Removed</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Processed image will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Remove Background</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Image Background Remover in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Your Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your image file. Our AI background remover supports all common image formats including JPG, PNG, WEBP, and more. The image will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Remove Background</h4>
+                            <p class="card-text">Click the "Remove Background" button to start processing. Our advanced AI algorithm will automatically detect the subject and remove the background, creating a transparent PNG image with perfect edge detection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Result</h4>
+                            <p class="card-text">Once processing is complete, review your image with the removed background in the preview area. If satisfied, click the "Download" button to save your transparent PNG image to your device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Image Background Remover</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="Image Background Remover.jpeg" alt="AI Image Background Remover Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Remove backgrounds from images instantly with our AI-powered Image Background Remover. This sophisticated tool uses advanced artificial intelligence and machine learning algorithms to automatically detect subjects in your images and precisely remove backgrounds, creating professional transparent PNG images perfect for product photography, portraits, and graphic design projects.</p>
+                    <p>Our AI background removal technology analyzes image content, identifies the main subject through semantic segmentation, and intelligently separates it from the background with pixel-perfect accuracy. The tool handles complex edges, fine details like hair and fur, and transparent objects with exceptional precision. Whether you're creating product images for e-commerce, designing marketing materials, or editing photos, our background remover delivers studio-quality results in seconds. The process is completely free, requires no technical skills, and works entirely in your browser for maximum privacy and security.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How accurate is the AI background removal?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI background remover uses advanced machine learning algorithms trained on millions of images to achieve high accuracy. It excels at detecting subjects and creating clean edges, even with complex details like hair, fur, or transparent objects. The accuracy depends on image quality and subject-background contrast, but typically achieves professional-grade results.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What image formats are supported?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our tool supports all major image formats including JPG, JPEG, PNG, WEBP, BMP, and GIF. The output is always in PNG format with transparency support, which is the standard format for images with removed backgrounds. PNG format ensures your transparent images work perfectly in design software and on websites.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can I remove backgrounds from images with complex edges?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our AI is specifically designed to handle complex edges including hair, fur, feathers, and fine details. The algorithm uses advanced edge detection and semantic segmentation to identify and preserve these intricate details while cleanly removing the background. Results are typically excellent even with challenging subjects.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            How long does background removal take?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Background removal is typically very fast, taking only 2-5 seconds for most images. Processing time depends on image size and complexity, with larger or more detailed images taking slightly longer. All processing happens in your browser, so speed also depends on your device's performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Is my image data kept private and secure?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely! All image processing happens entirely in your web browser using client-side JavaScript. Your images are never uploaded to our servers, ensuring complete privacy and security. Once you close the browser tab, all image data is cleared from memory. We don't store, track, or have access to any of your images.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    // Only add backup handler if main.js handler didn't work
+                    // Check if event was already handled by checking if default was prevented
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; 
+                            canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            
+                            // Clear canvas with transparent background
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            
+                            // Draw the original image
+                            ctx.drawImage(img, 0, 0);
+                            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                            const data = imageData.data;
+                            const width = canvas.width;
+                            const height = canvas.height;
+                            
+                            // Helper function to get pixel value
+                            const getPixel = (x, y, channel) => {
+                                if (x < 0 || x >= width || y < 0 || y >= height) return 0;
+                                const idx = (y * width + x) * 4;
+                                return data[idx + channel];
+                            };
+                            
+                            // Helper function to calculate brightness
+                            const getBrightness = (x, y) => {
+                                if (x < 0 || x >= width || y < 0 || y >= height) return 0;
+                                const idx = (y * width + x) * 4;
+                                return (data[idx] + data[idx + 1] + data[idx + 2]) / 3;
+                            };
+                            
+                            // Helper function to calculate saturation
+                            const getSaturation = (x, y) => {
+                                if (x < 0 || x >= width || y < 0 || y >= height) return 0;
+                                const idx = (y * width + x) * 4;
+                                const r = data[idx];
+                                const g = data[idx + 1];
+                                const b = data[idx + 2];
+                                const max = Math.max(r, g, b);
+                                const min = Math.min(r, g, b);
+                                return max === 0 ? 0 : (max - min) / max;
+                            };
+                            
+                            // Calculate edge strength using better Sobel operator
+                            const getEdgeStrength = (x, y) => {
+                                if (x < 1 || x >= width - 1 || y < 1 || y >= height - 1) return 0;
+                                
+                                // Sobel kernels
+                                const gx = 
+                                    -1 * getBrightness(x - 1, y - 1) + 1 * getBrightness(x + 1, y - 1) +
+                                    -2 * getBrightness(x - 1, y)     + 2 * getBrightness(x + 1, y) +
+                                    -1 * getBrightness(x - 1, y + 1) + 1 * getBrightness(x + 1, y + 1);
+                                    
+                                const gy = 
+                                    -1 * getBrightness(x - 1, y - 1) - 2 * getBrightness(x, y - 1) - 1 * getBrightness(x + 1, y - 1) +
+                                     1 * getBrightness(x - 1, y + 1) + 2 * getBrightness(x, y + 1) + 1 * getBrightness(x + 1, y + 1);
+                                
+                                return Math.sqrt(gx * gx + gy * gy);
+                            };
+                            
+                            // Enhanced background color detection using multiple sampling strategies
+                            const samplePoints = [];
+                            const sampleSize = Math.min(40, Math.floor(width / 6), Math.floor(height / 6));
+                            
+                            // Sample corners more extensively
+                            for (let i = 0; i < sampleSize; i++) {
+                                for (let j = 0; j < sampleSize; j++) {
+                                    samplePoints.push({x: i, y: j});
+                                    samplePoints.push({x: width - 1 - i, y: j});
+                                    samplePoints.push({x: i, y: height - 1 - j});
+                                    samplePoints.push({x: width - 1 - i, y: height - 1 - j});
+                                }
+                            }
+                            
+                            // Sample border regions more densely
+                            const borderWidth = Math.min(20, Math.floor(width / 15), Math.floor(height / 15));
+                            for (let i = 0; i < width; i += 3) {
+                                for (let j = 0; j < borderWidth; j++) {
+                                    samplePoints.push({x: i, y: j});
+                                    samplePoints.push({x: i, y: height - 1 - j});
+                                }
+                            }
+                            for (let i = 0; i < height; i += 3) {
+                                for (let j = 0; j < borderWidth; j++) {
+                                    samplePoints.push({x: j, y: i});
+                                    samplePoints.push({x: width - 1 - j, y: i});
+                                }
+                            }
+                            
+                            // Collect background color samples with weights (corners weighted more)
+                            const bgSamples = [];
+                            for (const point of samplePoints) {
+                                if (point.x >= 0 && point.x < width && point.y >= 0 && point.y < height) {
+                                    const idx = (point.y * width + point.x) * 4;
+                                    const r = data[idx];
+                                    const g = data[idx + 1];
+                                    const b = data[idx + 2];
+                                    // Weight corner samples more heavily
+                                    const isCorner = (point.x < sampleSize && point.y < sampleSize) ||
+                                                   (point.x >= width - sampleSize && point.y < sampleSize) ||
+                                                   (point.x < sampleSize && point.y >= height - sampleSize) ||
+                                                   (point.x >= width - sampleSize && point.y >= height - sampleSize);
+                                    const weight = isCorner ? 2.0 : 1.0;
+                                    bgSamples.push({r, g, b, weight});
+                                }
+                            }
+                            
+                            // Calculate weighted average background color
+                            let totalWeight = 0;
+                            let avgR = 0, avgG = 0, avgB = 0;
+                            for (const sample of bgSamples) {
+                                avgR += sample.r * sample.weight;
+                                avgG += sample.g * sample.weight;
+                                avgB += sample.b * sample.weight;
+                                totalWeight += sample.weight;
+                            }
+                            avgR /= totalWeight;
+                            avgG /= totalWeight;
+                            avgB /= totalWeight;
+                            
+                            // Calculate standard deviation with weights
+                            let varianceR = 0, varianceG = 0, varianceB = 0;
+                            for (const sample of bgSamples) {
+                                varianceR += Math.pow(sample.r - avgR, 2) * sample.weight;
+                                varianceG += Math.pow(sample.g - avgG, 2) * sample.weight;
+                                varianceB += Math.pow(sample.b - avgB, 2) * sample.weight;
+                            }
+                            const stdDev = Math.sqrt((varianceR + varianceG + varianceB) / (totalWeight * 3));
+                            
+                            // Find dominant background colors (simple clustering)
+                            const bgColors = [];
+                            for (const sample of bgSamples) {
+                                const dist = Math.sqrt(
+                                    Math.pow(sample.r - avgR, 2) + 
+                                    Math.pow(sample.g - avgG, 2) + 
+                                    Math.pow(sample.b - avgB, 2)
+                                );
+                                if (dist < stdDev * 2) {
+                                    bgColors.push(sample);
+                                }
+                            }
+                            
+                            // Recalculate average from dominant colors only
+                            if (bgColors.length > 0) {
+                                totalWeight = 0;
+                                avgR = avgG = avgB = 0;
+                                for (const sample of bgColors) {
+                                    avgR += sample.r * sample.weight;
+                                    avgG += sample.g * sample.weight;
+                                    avgB += sample.b * sample.weight;
+                                    totalWeight += sample.weight;
+                                }
+                                avgR /= totalWeight;
+                                avgG /= totalWeight;
+                                avgB /= totalWeight;
+                            }
+                            
+                            // First pass: Calculate alpha values with improved background detection
+                            const alphaMap = new Float32Array(width * height);
+                            
+                            // Detect if background is light or dark
+                            const isLightBg = avgR + avgG + avgB > 382.5; // Average brightness > 150
+                            
+                            for (let y = 0; y < height; y++) {
+                                for (let x = 0; x < width; x++) {
+                                    const idx = y * width + x;
+                                    const pixelIdx = idx * 4;
+                                    const r = data[pixelIdx];
+                                    const g = data[pixelIdx + 1];
+                                    const b = data[pixelIdx + 2];
+                                    
+                                    const brightness = (r + g + b) / 3;
+                                    const saturation = getSaturation(x, y);
+                                    const edgeStrength = getEdgeStrength(x, y);
+                                    
+                                    // Calculate distance from background color
+                                    const colorDist = Math.sqrt(
+                                        Math.pow(r - avgR, 2) + 
+                                        Math.pow(g - avgG, 2) + 
+                                        Math.pow(b - avgB, 2)
+                                    ) / 441.67; // Normalize to 0-1
+                                    
+                                    // Determine background probability (0 = background, 1 = foreground)
+                                    let foregroundProb = 1.0;
+                                    let backgroundScore = 0;
+                                    
+                                    // Primary criteria: Similarity to detected background color (adjusted by std dev)
+                                    // Use adaptive thresholds based on background variation
+                                    const adaptiveThreshold1 = Math.min(0.12, 0.06 + stdDev / 120);
+                                    const adaptiveThreshold2 = Math.min(0.22, 0.12 + stdDev / 90);
+                                    const isVerySimilarToBg = colorDist < adaptiveThreshold1;
+                                    const isSimilarToBg = colorDist < adaptiveThreshold2;
+                                    
+                                    // Also check distance to any dominant background color
+                                    let minDistToBg = colorDist;
+                                    for (const bgColor of bgColors.slice(0, 5)) { // Check top 5 dominant colors
+                                        const dist = Math.sqrt(
+                                            Math.pow(r - bgColor.r, 2) + 
+                                            Math.pow(g - bgColor.g, 2) + 
+                                            Math.pow(b - bgColor.b, 2)
+                                        ) / 441.67;
+                                        if (dist < minDistToBg) {
+                                            minDistToBg = dist;
+                                        }
+                                    }
+                                    const isCloseToAnyBg = minDistToBg < adaptiveThreshold2;
+                                    
+                                    // Secondary criteria: Background characteristics (improved thresholds)
+                                    const isLowEdge = edgeStrength < 45;
+                                    const isVeryLowEdge = edgeStrength < 25;
+                                    const isLowSaturation = saturation < 0.35;
+                                    const isVeryLowSaturation = saturation < 0.2;
+                                    
+                                    // Additional check: pixel position (edges more likely to be background)
+                                    const distFromEdge = Math.min(x, y, width - x, height - y);
+                                    const isNearEdge = distFromEdge < borderWidth;
+                                    
+                                    // Light background detection (improved)
+                                    if (isLightBg) {
+                                        const isLight = brightness > 165;
+                                        const isVeryLight = brightness > 205;
+                                        
+                                        // Strong background indicators
+                                        if (isVerySimilarToBg && isVeryLowEdge) {
+                                            backgroundScore = 0.98; // Very likely background
+                                        } else if (isCloseToAnyBg && isLowEdge && isLowSaturation) {
+                                            backgroundScore = 0.92;
+                                        } else if (isVerySimilarToBg && isLowEdge) {
+                                            backgroundScore = 0.95;
+                                        } else if (isSimilarToBg && isLowEdge && isLowSaturation) {
+                                            backgroundScore = 0.88;
+                                        } else if (isVeryLight && isVeryLowSaturation && isVeryLowEdge) {
+                                            backgroundScore = 0.93;
+                                        } else if (isLight && isLowSaturation && isLowEdge) {
+                                            const brightnessFactor = Math.min(1, (brightness - 165) / 75);
+                                            const satFactor = Math.min(1, saturation / 0.35);
+                                            const edgeFactor = Math.min(1, edgeStrength / 45);
+                                            backgroundScore = brightnessFactor * (1 - satFactor) * (1 - edgeFactor) * 0.8;
+                                        }
+                                        
+                                        // Boost score if near edge and similar to background
+                                        if (isNearEdge && isCloseToAnyBg) {
+                                            backgroundScore = Math.max(backgroundScore, 0.85);
+                                        }
+                                        
+                                        // If color is very close to background average, it's likely background
+                                        if (isVerySimilarToBg) {
+                                            backgroundScore = Math.max(backgroundScore, 0.92);
+                                        } else if (isSimilarToBg && brightness > 175) {
+                                            backgroundScore = Math.max(backgroundScore, 0.78);
+                                        }
+                                    } 
+                                    // Dark background detection (improved)
+                                    else {
+                                        const isDark = brightness < 95;
+                                        const isVeryDark = brightness < 55;
+                                        
+                                        // Strong background indicators
+                                        if (isVerySimilarToBg && isVeryLowEdge) {
+                                            backgroundScore = 0.98;
+                                        } else if (isCloseToAnyBg && isLowEdge && isLowSaturation) {
+                                            backgroundScore = 0.92;
+                                        } else if (isVerySimilarToBg && isLowEdge) {
+                                            backgroundScore = 0.95;
+                                        } else if (isSimilarToBg && isLowEdge && isLowSaturation) {
+                                            backgroundScore = 0.88;
+                                        } else if (isVeryDark && isVeryLowEdge) {
+                                            backgroundScore = 0.93;
+                                        } else if (isDark && isLowEdge) {
+                                            const darknessFactor = Math.min(1, (95 - brightness) / 45);
+                                            const edgeFactor = Math.min(1, edgeStrength / 45);
+                                            backgroundScore = darknessFactor * (1 - edgeFactor) * 0.8;
+                                        }
+                                        
+                                        // Boost score if near edge and similar to background
+                                        if (isNearEdge && isCloseToAnyBg) {
+                                            backgroundScore = Math.max(backgroundScore, 0.85);
+                                        }
+                                        
+                                        if (isVerySimilarToBg) {
+                                            backgroundScore = Math.max(backgroundScore, 0.92);
+                                        } else if (isSimilarToBg && brightness < 115) {
+                                            backgroundScore = Math.max(backgroundScore, 0.78);
+                                        }
+                                    }
+                                    
+                                    // Strong edges indicate foreground objects - preserve them (improved)
+                                    if (edgeStrength > 75) {
+                                        foregroundProb = Math.max(0.95, 1 - backgroundScore * 0.2);
+                                    } else if (edgeStrength > 60) {
+                                        foregroundProb = Math.max(0.85, 1 - backgroundScore * 0.35);
+                                    } else if (edgeStrength > 45) {
+                                        foregroundProb = Math.max(0.75, 1 - backgroundScore * 0.5);
+                                    } else {
+                                        foregroundProb = Math.max(0, 1 - backgroundScore);
+                                    }
+                                    
+                                    // If pixel is very similar to background and has no edges, make it fully transparent
+                                    if (isVerySimilarToBg && isVeryLowEdge && backgroundScore > 0.85) {
+                                        foregroundProb = Math.max(0, foregroundProb * 0.15);
+                                    } else if (isCloseToAnyBg && isVeryLowEdge && backgroundScore > 0.8) {
+                                        foregroundProb = Math.max(0, foregroundProb * 0.25);
+                                    }
+                                    
+                                    // Additional check: if pixel is at border and similar to background, make it transparent
+                                    if (isNearEdge && isCloseToAnyBg && isLowEdge) {
+                                        foregroundProb = Math.max(0, foregroundProb * 0.35);
+                                    } else if (isNearEdge && isSimilarToBg && isLowEdge) {
+                                        foregroundProb = Math.max(0, foregroundProb * 0.5);
+                                    }
+                                    
+                                    alphaMap[idx] = foregroundProb;
+                                }
+                            }
+                            
+                            // Apply Gaussian blur-like smoothing to alpha map (multiple passes)
+                            const smoothAlpha = (map, passes = 3) => {
+                                const kernel = [1, 2, 1, 2, 4, 2, 1, 2, 1];
+                                const kernelSum = 16;
+                                
+                                for (let pass = 0; pass < passes; pass++) {
+                                    const smoothed = new Float32Array(map);
+                                    
+                                    for (let y = 1; y < height - 1; y++) {
+                                        for (let x = 1; x < width - 1; x++) {
+                                            let sum = 0;
+                                            let k = 0;
+                                            
+                                            for (let dy = -1; dy <= 1; dy++) {
+                                                for (let dx = -1; dx <= 1; dx++) {
+                                                    const idx = ((y + dy) * width + (x + dx));
+                                                    sum += map[idx] * kernel[k];
+                                                    k++;
+                                                }
+                                            }
+                                            
+                                            smoothed[y * width + x] = sum / kernelSum;
+                                        }
+                                    }
+                                    
+                                    // Copy edges
+                                    for (let y = 0; y < height; y++) {
+                                        smoothed[y * width] = map[y * width];
+                                        smoothed[y * width + width - 1] = map[y * width + width - 1];
+                                    }
+                                    for (let x = 0; x < width; x++) {
+                                        smoothed[x] = map[x];
+                                        smoothed[(height - 1) * width + x] = map[(height - 1) * width + x];
+                                    }
+                                    
+                                    // Update map
+                                    for (let i = 0; i < map.length; i++) {
+                                        map[i] = smoothed[i];
+                                    }
+                                }
+                            };
+                            
+                            // Smooth the alpha map to eliminate boxy artifacts (more passes for cleaner results)
+                            smoothAlpha(alphaMap, 7);
+                            
+                            // Post-processing: Clean up small background artifacts and remove background more aggressively
+                            const cleanedAlpha = new Float32Array(alphaMap);
+                            
+                            // First pass: Remove isolated pixels and clean up edges
+                            for (let y = 1; y < height - 1; y++) {
+                                for (let x = 1; x < width - 1; x++) {
+                                    const idx = y * width + x;
+                                    const center = alphaMap[idx];
+                                    
+                                    // Count foreground and background neighbors
+                                    let foregroundNeighbors = 0;
+                                    let backgroundNeighbors = 0;
+                                    let totalNeighborAlpha = 0;
+                                    for (let dy = -1; dy <= 1; dy++) {
+                                        for (let dx = -1; dx <= 1; dx++) {
+                                            if (dx === 0 && dy === 0) continue;
+                                            const neighborIdx = ((y + dy) * width + (x + dx));
+                                            const neighborAlpha = alphaMap[neighborIdx];
+                                            totalNeighborAlpha += neighborAlpha;
+                                            if (neighborAlpha > 0.5) {
+                                                foregroundNeighbors++;
+                                            } else {
+                                                backgroundNeighbors++;
+                                            }
+                                        }
+                                    }
+                                    
+                                    const avgNeighborAlpha = totalNeighborAlpha / 8;
+                                    
+                                    // If center is background but most neighbors are foreground, keep it as foreground (edge preservation)
+                                    if (center < 0.25 && foregroundNeighbors >= 6) {
+                                        cleanedAlpha[idx] = Math.min(1, center + 0.6);
+                                    }
+                                    // If center is foreground but most neighbors are background, make it background (remove isolated foreground pixels)
+                                    else if (center > 0.5 && backgroundNeighbors >= 6) {
+                                        cleanedAlpha[idx] = Math.max(0, center - 0.8);
+                                    }
+                                    // If center is slightly foreground but surrounded by background, make it fully background
+                                    else if (center < 0.5 && backgroundNeighbors >= 5) {
+                                        cleanedAlpha[idx] = Math.max(0, center * 0.15);
+                                    }
+                                    // If center is background and neighbors are also mostly background, make it fully transparent
+                                    else if (center < 0.25 && avgNeighborAlpha < 0.25) {
+                                        cleanedAlpha[idx] = 0;
+                                    }
+                                    // If center is background, make it more transparent
+                                    else if (center < 0.3) {
+                                        cleanedAlpha[idx] = Math.max(0, center * 0.3);
+                                    } else {
+                                        cleanedAlpha[idx] = center;
+                                    }
+                                }
+                            }
+                            
+                            // Second pass: Remove any remaining background pixels at edges and corners
+                            for (let y = 0; y < height; y++) {
+                                for (let x = 0; x < width; x++) {
+                                    const idx = y * width + x;
+                                    const isAtEdge = (y === 0 || y === height - 1 || x === 0 || x === width - 1);
+                                    const isAtCorner = ((y === 0 || y === height - 1) && (x === 0 || x === width - 1));
+                                    
+                                    // If at corner and low alpha, make it fully transparent
+                                    if (isAtCorner && cleanedAlpha[idx] < 0.5) {
+                                        cleanedAlpha[idx] = 0;
+                                    }
+                                    // If at edge and low alpha, make it fully transparent
+                                    else if (isAtEdge && cleanedAlpha[idx] < 0.4) {
+                                        cleanedAlpha[idx] = 0;
+                                    }
+                                    // If very close to edge and low alpha, make it more transparent
+                                    else if ((y < 3 || y >= height - 3 || x < 3 || x >= width - 3) && cleanedAlpha[idx] < 0.3) {
+                                        cleanedAlpha[idx] = Math.max(0, cleanedAlpha[idx] * 0.5);
+                                    }
+                                }
+                            }
+                            
+                            // Third pass: Final cleanup - remove any remaining low-alpha pixels that are isolated
+                            for (let y = 2; y < height - 2; y++) {
+                                for (let x = 2; x < width - 2; x++) {
+                                    const idx = y * width + x;
+                                    if (cleanedAlpha[idx] < 0.2) {
+                                        // Check if surrounded by low alpha
+                                        let lowAlphaCount = 0;
+                                        for (let dy = -2; dy <= 2; dy++) {
+                                            for (let dx = -2; dx <= 2; dx++) {
+                                                if (dx === 0 && dy === 0) continue;
+                                                const neighborIdx = ((y + dy) * width + (x + dx));
+                                                if (cleanedAlpha[neighborIdx] < 0.2) lowAlphaCount++;
+                                            }
+                                        }
+                                        // If most neighbors are also low alpha, make it fully transparent
+                                        if (lowAlphaCount >= 18) {
+                                            cleanedAlpha[idx] = 0;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            // Final smoothing pass for clean edges
+                            smoothAlpha(cleanedAlpha, 4);
+                            
+                            // Use cleaned alpha map
+                            for (let i = 0; i < alphaMap.length; i++) {
+                                alphaMap[i] = cleanedAlpha[i];
+                            }
+                            
+                            // Apply alpha values to output - preserve original RGB values exactly
+                            const output = new Uint8ClampedArray(data);
+                            for (let y = 0; y < height; y++) {
+                                for (let x = 0; x < width; x++) {
+                                    const idx = (y * width + x) * 4;
+                                    const alphaIdx = y * width + x;
+                                    let alpha = Math.floor(255 * alphaMap[alphaIdx]);
+                                    
+                                    // Sharpen edges and aggressively remove background for clean transparency
+                                    // Make background pixels fully transparent
+                                    if (alpha < 30) {  // Less than ~12% opacity - make fully transparent
+                                        alpha = 0; // Fully transparent
+                                    } else if (alpha > 225) {  // More than ~88% opacity - make fully opaque
+                                        alpha = 255; // Fully opaque
+                                    } else if (alpha < 60) {
+                                        // Very low alpha - make it even more transparent for cleaner background
+                                        alpha = Math.max(0, Math.floor(alpha * 0.5));
+                                    } else {
+                                        // For semi-transparent pixels, preserve the calculated alpha
+                                        alpha = Math.floor(255 * alphaMap[alphaIdx]);
+                                    }
+                                    
+                                    // Preserve original RGB values exactly - do not modify them
+                                    // Only modify the alpha channel
+                                    output[idx] = data[idx];         // R - keep original
+                                    output[idx + 1] = data[idx + 1]; // G - keep original
+                                    output[idx + 2] = data[idx + 2]; // B - keep original
+                                    output[idx + 3] = alpha;         // A - set transparency
+                                    
+                                    // If pixel is fully transparent, set RGB to 0 to avoid black background artifacts
+                                    if (alpha === 0) {
+                                        output[idx] = 0;     // R
+                                        output[idx + 1] = 0; // G
+                                        output[idx + 2] = 0; // B
+                                    }
+                                }
+                            }
+                            
+                            // Create new ImageData with smoothed result
+                            const finalImageData = new ImageData(output, width, height);
+                            
+                            // Clear canvas completely with transparent background
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            
+                            // Put the processed image data with transparency
+                            ctx.putImageData(finalImageData, 0, 0);
+                            
+                            // Export as PNG with transparency (PNG supports alpha channel)
+                            processedImageData = canvas.toDataURL('image/png');
+                            
+                            // Add transparent background class and display image
+                            const processedPreview = document.getElementById('processedPreview');
+                            processedPreview.classList.add('transparent-bg');
+                            processedPreview.innerHTML = `<img src="${processedImageData}" alt="Background Removed" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) {
+                    const link = document.createElement('a');
+                    link.href = processedImageData;
+                    link.download = 'background-removed-transparent.png';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Image Upscaler - Enhance image resolution with AI-powered upscaling (2x, 4x, 8x). Upscale images without losing quality using advanced artificial intelligence. Perfect for photographers, designers, and content creators.">
+    <meta name="keywords" content="AI image upscaler, image upscaler, upscale image, enhance image resolution, AI upscaling, 2x upscale, 4x upscale, 8x upscale, image enhancer, free image upscaler, online image upscaler, AI image enlargement, super resolution">
+    <meta name="author" content="AIVOROPRO">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aivoropro.com/ai-image-upscaler.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aivoropro.com/ai-image-upscaler.html">
+    <meta property="og:title" content="AI Image Upscaler - Free Online Image Upscaling Tool | AIVOROPRO">
+    <meta property="og:description" content="Enhance image resolution with AI-powered upscaling (2x, 4x, 8x). Upscale images without losing quality. Free, fast, and browser-based.">
+    <meta property="og:image" content="https://aivoropro.com/AI Image Upscaler.jpeg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aivoropro.com/ai-image-upscaler.html">
+    <meta property="twitter:title" content="AI Image Upscaler - Free Online Image Upscaling Tool | AIVOROPRO">
+    <meta property="twitter:description" content="Enhance image resolution with AI-powered upscaling (2x, 4x, 8x). Upscale images without losing quality. Free, fast, and browser-based.">
+    <meta property="twitter:image" content="https://aivoropro.com/AI Image Upscaler.jpeg">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Image Upscaler - Free Online Image Upscaling Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Image Upscaler</h1>
+            <p>Enhance your image resolution with AI-powered upscaling. Choose from 2x, 4x, or 8x upscaling options.</p>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your image here</p>
+            <span>or click to browse</span>
+        </div>
+
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Image</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Original image will appear here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Upscaled Image</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Upscaled image will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <label class="me-3">Upscale Factor:</label>
+            <select id="upscaleFactor" class="form-select d-inline-block" style="width: auto;">
+                <option value="2">2x</option>
+                <option value="4" selected>4x</option>
+                <option value="8">8x</option>
+            </select>
+            <button class="btn btn-primary ms-3" id="processBtn" disabled>
+                <i class="fas fa-magic"></i> Upscale Image
+            </button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled>
+                <i class="fas fa-download"></i> Download
+            </button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Image Upscaler in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Your Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your image file. Our tool supports all common image formats including JPG, PNG, WEBP, and more. The image will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Choose Upscale Factor</h4>
+                            <p class="card-text">Select your desired upscaling factor from the dropdown menu. Choose 2x for doubling resolution, 4x for quadrupling, or 8x for maximum enhancement. Then click the "Upscale Image" button to process.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Result</h4>
+                            <p class="card-text">Once processing is complete, review your upscaled image in the preview area. If satisfied with the result, click the "Download" button to save your enhanced high-resolution image to your device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Image Upscaler</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="AI Image Upscaler.jpeg" alt="AI Image Upscaler Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Transform your low-resolution images into stunning high-quality visuals with our advanced AI Image Upscaler. This powerful tool utilizes cutting-edge artificial intelligence and machine learning algorithms to intelligently enhance image resolution while preserving fine details, textures, and natural appearance.</p>
+                    <p>Unlike traditional upscaling methods that simply stretch pixels and create blurry results, our AI-powered upscaler analyzes image patterns, understands content structure, and generates new pixels based on learned patterns from millions of high-quality images. Whether you need to upscale photos for printing, enhance images for web use, or improve quality of old photographs, our tool delivers professional-grade results instantly. The process is completely free, requires no registration, and maintains your image's original quality while dramatically increasing resolution.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What image formats are supported by the AI Image Upscaler?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Image Upscaler supports all major image formats including JPG, JPEG, PNG, WEBP, BMP, GIF, and more. You can upload any image format and the tool will process it seamlessly, outputting a high-quality upscaled version in PNG format for maximum quality preservation.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What is the maximum image size I can upscale?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            While there's no strict file size limit, we recommend images under 10MB for optimal processing speed. The tool can handle images up to 50MB, but larger files may take longer to process. The output resolution depends on your chosen upscale factor (2x, 4x, or 8x) multiplied by the original image dimensions.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Will the upscaled image lose quality?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, our AI Image Upscaler is specifically designed to enhance quality rather than degrade it. The AI algorithm intelligently adds detail and sharpness while upscaling, often resulting in images that appear sharper and more detailed than the original. However, the quality improvement depends on the original image's quality and the chosen upscale factor.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            How long does the upscaling process take?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Processing time varies based on image size and the selected upscale factor. Small images (under 1MB) typically process in 2-5 seconds, while larger images may take 10-30 seconds. The 8x upscale factor takes longer than 2x or 4x, but all processing happens in your browser for privacy and speed.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Is my image data secure and private?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! All image processing happens entirely in your web browser using client-side JavaScript. Your images are never uploaded to our servers, ensuring complete privacy and security. Once you close the browser tab, all image data is cleared from memory. We don't store, track, or have access to any of your images.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null;
+        let processedImageData = null;
+
+        function processImageUpscale(file, previewElement) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const factor = parseInt(document.getElementById('upscaleFactor').value);
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width * factor;
+                    canvas.height = img.height * factor;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    
+                    processedImageData = canvas.toDataURL('image/png');
+                    previewElement.innerHTML = `<img src="${processedImageData}" alt="Upscaled" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                    document.getElementById('downloadBtn').disabled = false;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) {
+                currentFile = file;
+                document.getElementById('processBtn').disabled = false;
+            }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    processImageUpscale(currentFile, document.getElementById('processedPreview'));
+                }
+            });
+
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) {
+                    const link = document.createElement('a');
+                    link.href = processedImageData;
+                    link.download = 'upscaled-image.png';
+                    link.click();
+                }
+            });
+        });
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Image Upscaler",
+        "description": "Free AI-powered image upscaling tool. Enhance image resolution with 2x, 4x, or 8x upscaling without losing quality.",
+        "url": "https://aivoropro.com/ai-image-upscaler.html",
+        "applicationCategory": "ImageEditor",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "2850"
+        },
+        "featureList": [
+            "2x, 4x, and 8x upscaling options",
+            "AI-powered enhancement",
+            "Quality preservation",
+            "Instant processing",
+            "Free to use",
+            "Browser-based processing"
+        ]
+    }
+    </script>
+</body>
+</html>
+

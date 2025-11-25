@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Image Uncrop Tool - Intelligently uncrop images to various aspect ratios (1:1, 9:16, 16:9, 4:3, Custom).">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Image Uncrop - Free Online Image Uncrop Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Image Uncrop</h1>
+            <p>Intelligently uncrop images to various aspect ratios using AI technology.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Image</h3>
+                <div class="file-preview white-bg" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original image will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Uncropped Image</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Uncropped image will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <label class="me-3">Aspect Ratio:</label>
+            <select id="aspectRatio" class="form-select d-inline-block" style="width: auto;">
+                <option value="1:1">1:1 (Square)</option>
+                <option value="9:16">9:16 (Portrait)</option>
+                <option value="16:9" selected>16:9 (Landscape)</option>
+                <option value="4:3">4:3 (Standard)</option>
+                <option value="custom">Custom</option>
+            </select>
+            <div id="customDimensions" class="mt-3" style="display: none;">
+                <label class="me-2">Width:</label>
+                <input type="number" id="customWidth" class="form-control d-inline-block" style="width: 100px;" placeholder="Width" min="1">
+                <label class="ms-3 me-2">Height:</label>
+                <input type="number" id="customHeight" class="form-control d-inline-block" style="width: 100px;" placeholder="Height" min="1">
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Uncrop Image</button>
+                <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download</button>
+            </div>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Image Uncrop in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Your Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your image file. Our AI image uncrop tool supports all common image formats including JPG, PNG, WEBP, and more. The image will appear in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-crop"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Select Aspect Ratio</h4>
+                            <p class="card-text">Choose your desired aspect ratio from the dropdown menu. Select from preset ratios like 1:1 (Square), 9:16 (Portrait), 16:9 (Landscape), 4:3 (Standard), or choose Custom to enter specific width and height dimensions. Then click the "Uncrop Image" button to process.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Result</h4>
+                            <p class="card-text">Once processing is complete, review your uncropped image in the preview area. The tool intelligently crops your image to match the selected aspect ratio while preserving the most important content. If satisfied, click the "Download" button to save your cropped image.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Image Uncrop</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="Image Uncrop.jpeg" alt="AI Image Uncrop Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Transform your images to any aspect ratio with our intelligent AI Image Uncrop tool. This powerful utility allows you to crop images to various aspect ratios including square (1:1), portrait (9:16), landscape (16:9), standard (4:3), or custom dimensions. The tool intelligently analyzes your image content and crops it to match your desired aspect ratio while preserving the most important visual elements.</p>
+                    <p>Our AI-powered uncrop tool uses advanced image analysis algorithms to identify the focal point and key content areas in your images. When you select an aspect ratio, the tool automatically determines the best crop area that maintains visual balance and keeps important subjects centered. This is particularly useful for social media content creation, where different platforms require specific aspect ratios. Whether you're preparing images for Instagram (square), TikTok (portrait), YouTube (landscape), or custom dimensions for print, our tool ensures your images look professional and well-composed. The process is completely free, requires no registration, and works entirely in your browser for maximum privacy and convenience.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What aspect ratios are available in the AI Image Uncrop tool?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Image Uncrop tool offers several preset aspect ratios including 1:1 (Square), 9:16 (Portrait), 16:9 (Landscape), and 4:3 (Standard). Additionally, you can select the Custom option to enter any specific width and height dimensions you need. This flexibility makes it perfect for various use cases from social media to print media.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            How does the tool determine what to keep when cropping?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The AI Image Uncrop tool uses intelligent content analysis to identify the focal point and important visual elements in your image. It analyzes the composition, subject placement, and visual balance to determine the best crop area. The tool typically centers important subjects and maintains visual harmony while cropping to your selected aspect ratio.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Will the image quality be reduced after cropping?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, the cropping process does not reduce image quality. The tool crops your image to the selected aspect ratio while maintaining the original image resolution and quality. The output image will have the same pixel quality as the original, just with adjusted dimensions to match your chosen aspect ratio.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Can I use custom dimensions for cropping?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! When you select "Custom" from the aspect ratio dropdown, you can enter any specific width and height values you need. This allows you to create images with exact dimensions for your specific requirements, whether for web design, print media, or any other purpose.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            What image formats are supported?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Image Uncrop tool supports all major image formats including JPG, JPEG, PNG, WEBP, BMP, and GIF. You can upload images in any of these formats, and the tool will process them seamlessly. The output is provided in PNG format to ensure high quality and compatibility with all devices and software.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null, originalImage = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { 
+                currentFile = file; 
+                document.getElementById('processBtn').disabled = false;
+                
+                // Load image to get dimensions
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        originalImage = img;
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            // Handle aspect ratio change
+            document.getElementById('aspectRatio').addEventListener('change', function() {
+                const customDimensions = document.getElementById('customDimensions');
+                if (this.value === 'custom') {
+                    customDimensions.style.display = 'block';
+                } else {
+                    customDimensions.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            // Store original image reference
+                            originalImage = img;
+                            
+                            const canvas = document.createElement('canvas');
+                            const ratio = document.getElementById('aspectRatio').value;
+                            let w = img.width, h = img.height;
+                            
+                            // Calculate crop dimensions based on aspect ratio
+                            // Crop the image to match target ratio (remove from left/right or top/bottom)
+                            let targetRatio;
+                            
+                            if (ratio === '1:1') { 
+                                // Square: use the smaller dimension
+                                targetRatio = 1;
+                            } else if (ratio === '9:16') { 
+                                // Portrait: width/height = 9/16
+                                targetRatio = 9/16;
+                            } else if (ratio === '16:9') { 
+                                // Landscape: width/height = 16/9
+                                targetRatio = 16/9;
+                            } else if (ratio === '4:3') { 
+                                // Standard: width/height = 4/3
+                                targetRatio = 4/3;
+                            } else if (ratio === 'custom') {
+                                const customWidth = parseInt(document.getElementById('customWidth').value);
+                                const customHeight = parseInt(document.getElementById('customHeight').value);
+                                if (!customWidth || !customHeight || customWidth < 1 || customHeight < 1) {
+                                    alert('Please enter valid custom width and height values.');
+                                    return;
+                                }
+                                targetRatio = customWidth / customHeight;
+                            }
+                            
+                            // Calculate crop dimensions to match target ratio
+                            let cropWidth, cropHeight, cropX, cropY;
+                            
+                            if (ratio === '1:1') {
+                                // Square: crop to square using smaller dimension
+                                const size = Math.min(img.width, img.height);
+                                cropWidth = cropHeight = size;
+                                cropX = (img.width - size) / 2;
+                                cropY = (img.height - size) / 2;
+                            } else {
+                                // Calculate what the crop dimensions should be
+                                const currentRatio = img.width / img.height;
+                                
+                                if (currentRatio > targetRatio) {
+                                    // Image is wider than target - crop from left and right
+                                    cropHeight = img.height;
+                                    cropWidth = cropHeight * targetRatio;
+                                    cropX = (img.width - cropWidth) / 2;
+                                    cropY = 0;
+                                } else {
+                                    // Image is taller than target - crop from top and bottom
+                                    cropWidth = img.width;
+                                    cropHeight = cropWidth / targetRatio;
+                                    cropX = 0;
+                                    cropY = (img.height - cropHeight) / 2;
+                                }
+                            }
+                            
+                            // Set canvas to cropped dimensions
+                            w = cropWidth;
+                            h = cropHeight;
+                            
+                            canvas.width = w;
+                            canvas.height = h;
+                            const ctx = canvas.getContext('2d');
+                            
+                            // Clear canvas with transparent background
+                            ctx.clearRect(0, 0, w, h);
+                            
+                            // Draw the cropped portion of the image
+                            ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+                            
+                            processedImageData = canvas.toDataURL('image/png');
+                            
+                            // Add transparent background class and display image with size info
+                            const processedPreview = document.getElementById('processedPreview');
+                            processedPreview.classList.add('transparent-bg');
+                            processedPreview.innerHTML = `
+                                <div>
+                                    <img src="${processedImageData}" alt="Uncropped" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+                                </div>
+                            `;
+                            
+                            
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) { 
+                    const link = document.createElement('a'); 
+                    link.href = processedImageData; 
+                    link.download = 'uncropped-image.png'; 
+                    link.click(); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

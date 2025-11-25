@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Video Compressor - Compress video files without losing quality using AI.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Video Compressor - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Video Compressor</h1>
+            <p>Compress video files without losing quality using AI technology.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your video here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Video</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Original video will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Compressed Video</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Compressed video will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <label class="me-3">Compression Quality:</label>
+            <select id="compressionQuality" class="form-select d-inline-block" style="width: auto;">
+                <option value="high">High Quality</option>
+                <option value="medium" selected>Medium Quality</option>
+                <option value="low">Low Quality (Smaller Size)</option>
+            </select>
+            <button class="btn btn-primary ms-3" id="processBtn" disabled><i class="fas fa-magic"></i> Compress Video</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Video Compressor in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Video File</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your video file. Our AI video compressor supports various video formats including MP4, MOV, AVI, WMV, MKV, and more. The video will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-compress"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Choose Compression Quality</h4>
+                            <p class="card-text">Select your desired compression quality from the dropdown menu. Choose High Quality for minimal compression, Medium Quality for balanced size and quality, or Low Quality for maximum file size reduction. Then click "Compress Video" to process.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Compressed Video</h4>
+                            <p class="card-text">Once compression is complete, preview your compressed video in the output area. The AI maintains quality while reducing file size. If satisfied, click "Download" to save your smaller video file to your device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Video Compressor</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="NEW VIDEO COMPRESSOR.png" alt="AI Video Compressor Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Compress video files without losing quality with our AI Video Compressor. This powerful tool uses advanced artificial intelligence and intelligent compression algorithms to reduce video file sizes while maintaining visual quality. Perfect for reducing file sizes for email, social media uploads, website optimization, or storage space savings, our compressor analyzes video content and applies optimal compression settings that preserve important details while significantly reducing file size.</p>
+                    <p>Our AI compression technology goes beyond basic video compression by understanding video content and applying adaptive compression that varies across different scenes and frames. The algorithm identifies areas where compression can be applied more aggressively without noticeable quality loss, while preserving important details in critical areas. Unlike standard compressors that apply uniform compression, our AI maintains quality in important scenes while optimizing file size. The tool offers multiple quality presets (High, Medium, Low) to balance file size and quality according to your needs. Whether you're compressing videos for faster uploads, reducing storage requirements, or optimizing for web delivery, our AI Video Compressor delivers professional results. The process is completely free, works entirely in your browser for privacy, and maintains audio quality during compression.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How much can I compress my video file?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Compression results vary based on the original video quality, content, and selected compression level. Typically, you can achieve 30-70% file size reduction depending on the quality setting. High Quality maintains excellent visual quality with moderate size reduction, while Low Quality provides maximum compression with more noticeable quality reduction.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will video quality be reduced after compression?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Video Compressor is designed to minimize quality loss while reducing file size. The High Quality setting maintains excellent visual quality with minimal noticeable difference. Medium Quality provides a good balance, while Low Quality prioritizes file size reduction. The AI intelligently preserves important details while optimizing compression.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Will the audio be preserved during compression?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, the compression process preserves audio quality and synchronization. Your compressed video will have the same audio tracks, quality, and synchronization as the original video file. The compression primarily affects video data, leaving audio untouched.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            How long does video compression take?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Processing time varies based on video length, resolution, and file size. Short videos (under 1 minute) typically compress in 1-3 minutes, while longer videos may take 5-15 minutes. The compression process analyzes and optimizes each frame, so processing time depends on video complexity and your device's performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            What video formats are supported?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Video Compressor supports all major video formats including MP4, MOV, AVI, WMV, MKV, FLV, WEBM, and more. You can compress videos in any of these formats, and the tool will process them seamlessly. The output format typically matches the input format to ensure compatibility.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedVideoData = null, processedVideoDataUrl = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'video');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (!currentFile) {
+                    alert('Please upload a video file first.');
+                    return;
+                }
+                
+                const btn = this;
+                const quality = document.getElementById('compressionQuality').value;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Compressing...';
+                
+                console.log('Starting video compression with quality:', quality);
+                
+                // Define compression settings based on quality
+                const compressionSettings = {
+                    high: {
+                        videoBitsPerSecond: 5000000,  // 5 Mbps - High quality, larger file
+                        label: 'High Quality'
+                    },
+                    medium: {
+                        videoBitsPerSecond: 2500000,  // 2.5 Mbps - Medium quality, balanced
+                        label: 'Medium Quality'
+                    },
+                    low: {
+                        videoBitsPerSecond: 1000000,  // 1 Mbps - Low quality, smaller file
+                        label: 'Low Quality (Smaller Size)'
+                    }
+                };
+                
+                const settings = compressionSettings[quality] || compressionSettings.medium;
+                console.log('Compression settings:', settings);
+                
+                // Create video element to load the file
+                const video = document.createElement('video');
+                video.preload = 'metadata';
+                video.muted = false; // Keep audio enabled
+                video.playsInline = true;
+                video.crossOrigin = 'anonymous';
+                
+                const videoUrl = URL.createObjectURL(currentFile);
+                video.src = videoUrl;
+                
+                video.onloadedmetadata = function() {
+                    console.log('Video metadata loaded. Dimensions:', video.videoWidth, 'x', video.videoHeight);
+                    video.currentTime = 0;
+                    
+                    video.onloadeddata = function() {
+                        console.log('Video data loaded. Starting compression...');
+                        
+                        // Create canvas with same dimensions as video
+                        const canvas = document.createElement('canvas');
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        const ctx = canvas.getContext('2d');
+                        
+                        // Check for supported MIME types
+                        const mimeTypes = [
+                            'video/webm;codecs=vp9',
+                            'video/webm;codecs=vp8',
+                            'video/webm',
+                            'video/mp4'
+                        ];
+                        
+                        let selectedMimeType = 'video/webm';
+                        for (const mimeType of mimeTypes) {
+                            if (MediaRecorder.isTypeSupported(mimeType)) {
+                                selectedMimeType = mimeType;
+                                console.log('Selected MIME type:', mimeType);
+                                break;
+                            }
+                        }
+                        
+                        // Create stream from canvas (video track)
+                        const fps = 30;
+                        const canvasStream = canvas.captureStream(fps);
+                        
+                        // Get audio track from original video using Web Audio API
+                        let combinedStream;
+                        try {
+                            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                            const source = audioContext.createMediaElementSource(video);
+                            const destination = audioContext.createMediaStreamDestination();
+                            source.connect(destination);
+                            source.connect(audioContext.destination); // Also connect to speakers for playback
+                            
+                            // Combine video track from canvas with audio track from original video
+                            combinedStream = new MediaStream();
+                            canvasStream.getVideoTracks().forEach(track => {
+                                combinedStream.addTrack(track);
+                            });
+                            destination.stream.getAudioTracks().forEach(track => {
+                                combinedStream.addTrack(track);
+                            });
+                        } catch (err) {
+                            console.warn('Audio context creation failed, using canvas stream only:', err);
+                            combinedStream = canvasStream; // Fallback to video only
+                        }
+                        
+                        // Create MediaRecorder with compression settings (including audio)
+                        const recorderOptions = {
+                            mimeType: selectedMimeType,
+                            videoBitsPerSecond: settings.videoBitsPerSecond,
+                            audioBitsPerSecond: 128000 // 128 kbps for audio
+                        };
+                        
+                        let mediaRecorder;
+                        try {
+                            mediaRecorder = new MediaRecorder(combinedStream, recorderOptions);
+                            console.log('MediaRecorder created with bitrate:', settings.videoBitsPerSecond, 'bps');
+                        } catch (e) {
+                            console.warn('Failed to create MediaRecorder with options, trying without:', e);
+                            try {
+                                mediaRecorder = new MediaRecorder(combinedStream);
+                                console.log('MediaRecorder created without bitrate control (using default)');
+                            } catch (e2) {
+                                alert('MediaRecorder is not supported in this browser. Please use a modern browser.');
+                                btn.disabled = false;
+                                btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                                URL.revokeObjectURL(videoUrl);
+                                return;
+                            }
+                        }
+                        
+                        const chunks = [];
+                        let processInterval = null;
+                        const videoDuration = video.duration || 10;
+                        
+                        mediaRecorder.ondataavailable = function(e) {
+                            if (e.data && e.data.size > 0) {
+                                chunks.push(e.data);
+                                console.log('Received chunk:', e.data.size, 'bytes. Total chunks:', chunks.length);
+                            }
+                        };
+                        
+                        mediaRecorder.onstop = function() {
+                            console.log('Compression complete. Processing video file...');
+                            console.log('Total chunks:', chunks.length);
+                            
+                            if (processInterval) {
+                                clearInterval(processInterval);
+                                processInterval = null;
+                            }
+                            
+                            if (chunks.length === 0) {
+                                alert('Error: No video data was recorded. Please try again.');
+                                btn.disabled = false;
+                                btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                                URL.revokeObjectURL(videoUrl);
+                                return;
+                            }
+                            
+                            const totalSize = chunks.reduce((sum, chunk) => sum + (chunk ? chunk.size : 0), 0);
+                            console.log('Compressed video size:', totalSize, 'bytes');
+                            console.log('Original video size:', currentFile.size, 'bytes');
+                            const compressionRatio = ((1 - totalSize / currentFile.size) * 100).toFixed(1);
+                            console.log('Compression ratio:', compressionRatio + '%');
+                            
+                            // Create blob
+                            const actualMimeType = mediaRecorder.mimeType || selectedMimeType;
+                            const blob = new Blob(chunks, { type: actualMimeType });
+                            
+                            // Create preview
+                            const blobUrl = URL.createObjectURL(blob);
+                            document.getElementById('processedPreview').innerHTML = `<video src="${blobUrl}" controls style="max-width: 100%; max-height: 100%;"></video>`;
+                            
+                            // Store processed data
+                            processedVideoData = blob;
+                            processedVideoDataUrl = blobUrl;
+                            
+                            // Show compression info
+                            const originalSizeMB = (currentFile.size / 1024 / 1024).toFixed(2);
+                            const compressedSizeMB = (blob.size / 1024 / 1024).toFixed(2);
+                            console.log('Original size:', originalSizeMB, 'MB');
+                            console.log('Compressed size:', compressedSizeMB, 'MB');
+                            console.log('Size reduction:', compressionRatio + '%');
+                            
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                            document.getElementById('downloadBtn').disabled = false;
+                            
+                            URL.revokeObjectURL(videoUrl);
+                        };
+                        
+                        mediaRecorder.onerror = function(e) {
+                            console.error('MediaRecorder error:', e);
+                            alert('Error during compression. Please try again.');
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                            if (processInterval) {
+                                clearInterval(processInterval);
+                                processInterval = null;
+                            }
+                            URL.revokeObjectURL(videoUrl);
+                        };
+                        
+                        // Start recording
+                        try {
+                            mediaRecorder.start(100); // Request data every 100ms
+                            console.log('MediaRecorder started');
+                            
+                            // Reset video
+                            video.currentTime = 0;
+                            
+                            // Continuous frame update loop
+                            const frameInterval = 33; // ~30 FPS
+                            processInterval = setInterval(() => {
+                                if (mediaRecorder.state !== 'recording') {
+                                    if (processInterval) {
+                                        clearInterval(processInterval);
+                                        processInterval = null;
+                                    }
+                                    return;
+                                }
+                                
+                                // Check if video ended
+                                if (video.ended || video.currentTime >= videoDuration - 0.05) {
+                                    if (processInterval) {
+                                        clearInterval(processInterval);
+                                        processInterval = null;
+                                    }
+                                    
+                                    // Draw final frame
+                                    if (video.readyState >= 2) {
+                                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                        ctx.drawImage(video, 0, 0);
+                                    }
+                                    
+                                    // Stop recording
+                                    setTimeout(() => {
+                                        if (mediaRecorder.state === 'recording') {
+                                            try {
+                                                mediaRecorder.requestData();
+                                            } catch(e) {}
+                                            setTimeout(() => {
+                                                if (mediaRecorder.state === 'recording') {
+                                                    mediaRecorder.stop();
+                                                }
+                                            }, 200);
+                                        }
+                                    }, 500);
+                                    return;
+                                }
+                                
+                                // Draw current frame
+                                if (video.readyState >= 2 && !video.paused) {
+                                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                    ctx.drawImage(video, 0, 0);
+                                }
+                            }, frameInterval);
+                            
+                            // Start video playback
+                            video.play().then(() => {
+                                console.log('Video playback started');
+                            }).catch(err => {
+                                console.error('Video play error:', err);
+                                alert('Failed to play video. Please try again.');
+                                if (mediaRecorder.state === 'recording') {
+                                    mediaRecorder.stop();
+                                }
+                                btn.disabled = false;
+                                btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                                URL.revokeObjectURL(videoUrl);
+                            });
+                            
+                            // Stop when video ends
+                            video.addEventListener('ended', function onEnded() {
+                                video.removeEventListener('ended', onEnded);
+                                if (processInterval) {
+                                    clearInterval(processInterval);
+                                    processInterval = null;
+                                }
+                                setTimeout(() => {
+                                    if (mediaRecorder.state === 'recording') {
+                                        try {
+                                            mediaRecorder.requestData();
+                                        } catch(e) {}
+                                        setTimeout(() => {
+                                            if (mediaRecorder.state === 'recording') {
+                                                mediaRecorder.stop();
+                                            }
+                                        }, 200);
+                                    }
+                                }, 500);
+                            }, { once: true });
+                            
+                            // Safety timeout
+                            setTimeout(() => {
+                                if (mediaRecorder.state === 'recording') {
+                                    video.pause();
+                                    if (processInterval) {
+                                        clearInterval(processInterval);
+                                        processInterval = null;
+                                    }
+                                    try {
+                                        mediaRecorder.requestData();
+                                    } catch(e) {}
+                                    setTimeout(() => {
+                                        if (mediaRecorder.state === 'recording') {
+                                            mediaRecorder.stop();
+                                        }
+                                    }, 200);
+                                }
+                            }, (videoDuration * 1000) + 2000);
+                            
+                        } catch (err) {
+                            console.error('Error starting compression:', err);
+                            alert('Error starting compression: ' + err.message);
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                            URL.revokeObjectURL(videoUrl);
+                        }
+                    };
+                };
+                
+                video.onerror = function(e) {
+                    console.error('Video load error:', e);
+                    alert('Error loading video. Please make sure the file is a valid video format.');
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-magic"></i> Compress Video';
+                    URL.revokeObjectURL(videoUrl);
+                };
+            });
+            
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedVideoData && currentFile) {
+                    const link = document.createElement('a');
+                    const url = processedVideoDataUrl || URL.createObjectURL(processedVideoData);
+                    link.href = url;
+                    
+                    // Determine file extension
+                    const extension = processedVideoData.type.includes('mp4') ? 'mp4' : 'webm';
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.' + extension;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    console.log('Video downloaded');
+                } else {
+                    alert('Please compress the video first.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

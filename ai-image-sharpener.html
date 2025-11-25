@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI Image Sharpener - Sharpen blurry images using advanced AI algorithms.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>AI Image Sharpener - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Image Sharpener</h1>
+            <p>Sharpen blurry images using advanced AI algorithms.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Image</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original image will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Sharpened Image</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Sharpened image will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Sharpen Image</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use AI Image Sharpener in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Blurry Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your blurry or soft image file. Our AI sharpener supports all common image formats including JPG, PNG, WEBP, and more. The image will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Sharpen Image</h4>
+                            <p class="card-text">Click the "Sharpen Image" button to start the AI sharpening process. Our advanced algorithm will analyze your image and intelligently enhance edge definition, making blurry images crisp and clear while avoiding over-sharpening artifacts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download Sharp Image</h4>
+                            <p class="card-text">Once sharpening is complete, review your enhanced image in the preview area. Compare the sharpened result with the original, and if satisfied, click the "Download" button to save your crisp, clear image to your device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About AI Image Sharpener</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="Image Sharpener.jpeg" alt="AI Image Sharpener Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Transform blurry and soft images into crystal-clear, sharp visuals with our AI Image Sharpener. This advanced tool uses sophisticated artificial intelligence algorithms to intelligently enhance image sharpness by detecting and enhancing edges, improving detail definition, and reducing blur without introducing unwanted artifacts or noise. Perfect for fixing out-of-focus photos, motion-blurred images, or images that need extra crispness.</p>
+                    <p>Our AI sharpening technology goes beyond traditional sharpening filters by understanding image content and applying adaptive sharpening that varies across different regions of the image. The algorithm identifies edges, textures, and fine details, then applies precise sharpening that enhances clarity while preserving natural appearance. Unlike basic sharpening tools that can create halos or over-sharpen, our AI maintains a balanced approach that produces professional-quality results. The tool works entirely in your browser for complete privacy, processes images in seconds, and is completely free to use for unlimited images.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How does AI sharpening differ from regular sharpening?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            AI sharpening uses machine learning to understand image content and apply intelligent, adaptive sharpening that varies across different image regions. Unlike traditional sharpening that applies uniform enhancement, AI sharpening identifies edges, textures, and details, then applies precise enhancement that avoids over-sharpening artifacts like halos or noise, resulting in more natural and professional-looking results.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Can I sharpen heavily blurred images?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI sharpener works best with moderately blurred images. While it can significantly improve images with slight to moderate blur, extremely blurred images (where details are completely lost) may have limited improvement. The tool excels at enhancing images that are slightly out of focus, have minor motion blur, or need extra crispness and detail definition.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Will sharpening introduce artifacts or noise?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI sharpener is specifically designed to minimize artifacts and noise. The algorithm uses advanced techniques to avoid common sharpening issues like halos, over-sharpening, and noise amplification. The result is clean, natural-looking sharpening that enhances details without introducing unwanted visual artifacts.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            What image formats can I sharpen?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI Image Sharpener supports all major image formats including JPG, JPEG, PNG, WEBP, BMP, and GIF. You can upload any of these formats, and the sharpened image will be available for download in high-quality PNG format, which preserves all the sharpening improvements and maintains image quality.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            How long does the sharpening process take?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Image sharpening is typically very fast, taking only 2-5 seconds for most images. Processing time depends on image size and complexity, with larger or more detailed images taking slightly longer. All processing happens in your browser, so speed also depends on your device's performance, but the process is generally very quick.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                            const sharpenKernel = [0, -1, 0, -1, 5, -1, 0, -1, 0];
+                            const data = imageData.data;
+                            const width = canvas.width, height = canvas.height;
+                            const output = new Uint8ClampedArray(data);
+                            for (let y = 1; y < height - 1; y++) {
+                                for (let x = 1; x < width - 1; x++) {
+                                    for (let c = 0; c < 3; c++) {
+                                        let sum = 0;
+                                        for (let ky = -1; ky <= 1; ky++) {
+                                            for (let kx = -1; kx <= 1; kx++) {
+                                                const idx = ((y + ky) * width + (x + kx)) * 4 + c;
+                                                sum += data[idx] * sharpenKernel[(ky + 1) * 3 + (kx + 1)];
+                                            }
+                                        }
+                                        const idx = (y * width + x) * 4 + c;
+                                        output[idx] = Math.max(0, Math.min(255, sum));
+                                    }
+                                }
+                            }
+                            ctx.putImageData(new ImageData(output, width, height), 0, 0);
+                            processedImageData = canvas.toDataURL('image/png');
+                            document.getElementById('processedPreview').innerHTML = `<img src="${processedImageData}" alt="Sharpened" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) { const link = document.createElement('a'); link.href = processedImageData; link.download = 'sharpened-image.png'; link.click(); }
+            });
+        });
+    </script>
+</body>
+</html>
+
