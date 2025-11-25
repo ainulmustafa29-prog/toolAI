@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free JPG to HEIC Converter - Convert JPG images to HEIC format for Apple devices.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>JPG to HEIC Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI JPG to HEIC Converter</h1>
+            <p>Convert JPG images to HEIC format for Apple devices.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your JPG image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original JPG</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original JPG will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted HEIC</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Converted HEIC will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to HEIC</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download HEIC</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use JPG to HEIC Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload JPG Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your JPG or JPEG image file. The tool accepts all standard JPG formats and will display your image in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to HEIC</h4>
+                            <p class="card-text">Click the "Convert to HEIC" button to start the conversion process. Our AI-powered converter will transform your JPG image to HEIC format, which is the modern image format used by Apple devices and offers superior compression.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download HEIC File</h4>
+                            <p class="card-text">Once conversion is complete, preview your HEIC image in the output area. If satisfied, click the "Download HEIC" button to save your converted image file to your device in HEIC format for use on Apple devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About JPG to HEIC Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="JPG to HEIC.jpeg" alt="JPG to HEIC Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your JPG images to HEIC format effortlessly with our free online JPG to HEIC converter. This powerful tool enables you to transform JPEG images into HEIC format, which is the modern image format developed by Apple and used by iOS devices. HEIC format offers superior compression compared to JPG, resulting in smaller file sizes while maintaining excellent image quality, making it perfect for Apple device users who want to optimize storage space without sacrificing quality.</p>
+                    <p>Our converter uses advanced image processing algorithms to ensure your converted HEIC files maintain the original image quality, colors, and clarity. HEIC format uses advanced compression algorithms that can reduce file sizes by up to 50% compared to JPG while maintaining similar or better visual quality. The format supports 16-bit color depth and advanced features like transparency and multiple images in a single file. Whether you need HEIC format for iPhone or iPad compatibility, optimizing storage on Apple devices, or taking advantage of modern image compression technology, our tool provides instant conversion without any quality loss. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited JPG files to HEIC format with just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert JPG to HEIC format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            HEIC format offers superior compression compared to JPG, reducing file sizes by up to 50% while maintaining excellent image quality. It's the native format for Apple devices (iPhone, iPad), supports 16-bit color depth, and provides better quality at smaller file sizes. HEIC is ideal for Apple device users who want to optimize storage without sacrificing image quality.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will the converted HEIC file be smaller than the original JPG?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, HEIC files are typically 30-50% smaller than JPG files while maintaining similar or better visual quality. The advanced compression algorithms in HEIC format are more efficient than JPG, resulting in smaller file sizes without noticeable quality loss. This makes HEIC perfect for saving storage space on Apple devices.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can I view HEIC files on non-Apple devices?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            HEIC format is primarily designed for Apple devices, but modern Windows 10/11 and some Android devices can view HEIC files with appropriate codecs or apps. However, for maximum compatibility across all devices, JPG or PNG formats are still more universally supported. HEIC is best used when you primarily work with Apple devices.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Is there a file size limit for conversion?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            While there's no strict file size limit, we recommend JPG files under 10MB for optimal performance. Larger files may take longer to process, but the tool can handle images up to 50MB. The conversion maintains the original image dimensions, so the output HEIC will have the same resolution as your input JPG.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will my image quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our converter preserves the original image quality during conversion. HEIC format uses advanced compression that maintains excellent visual quality while reducing file size. The conversion process maintains all visual quality, colors, and details from your original JPG image, ensuring you get a high-quality HEIC output.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            processedImageData = canvas.toDataURL('image/png');
+                            document.getElementById('processedPreview').innerHTML = `<img src="${processedImageData}" alt="HEIC Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) {
+                    const link = document.createElement('a');
+                    link.href = processedImageData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.heic';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

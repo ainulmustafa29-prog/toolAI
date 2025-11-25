@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free JPG to EMF Converter - Convert JPG images to Enhanced Metafile EMF format.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>JPG to EMF Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI JPG to EMF Converter</h1>
+            <p>Convert JPG images to Enhanced Metafile EMF format.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your JPG image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original JPG</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original JPG will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted EMF</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Converted EMF will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to EMF</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download EMF</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use JPG to EMF Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload JPG Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your JPG or JPEG image file. The tool accepts all standard JPG formats and will display your image in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to EMF</h4>
+                            <p class="card-text">Click the "Convert to EMF" button to start the conversion process. Our AI-powered converter will transform your JPG image to Enhanced Metafile EMF format, creating a modern vector graphics file compatible with Windows applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download EMF File</h4>
+                            <p class="card-text">Once conversion is complete, preview your EMF image in the output area. If satisfied, click the "Download EMF" button to save your converted image file to your device in EMF format for use in Windows applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About JPG to EMF Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="JPG to EMF.jpeg" alt="JPG to EMF Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your JPG images to Enhanced Metafile EMF format effortlessly with our free online JPG to EMF converter. This powerful tool enables you to transform JPEG images into EMF format, which is the modern Windows vector graphics format that succeeded WMF. EMF format offers improved features and better quality compared to WMF, making it ideal for Windows applications, Microsoft Office documents, and modern Windows-based design tools that require high-quality vector graphics.</p>
+                    <p>Our converter uses advanced image processing algorithms to ensure your converted EMF files maintain the original image quality, colors, and clarity. EMF format is an enhanced version of WMF that supports 32-bit graphics, improved color support, and better scalability. The format is particularly useful for modern Windows applications, Microsoft Office integration, and graphics that need to be embedded in documents or presentations with high quality. Whether you need EMF format for Microsoft Office documents, Windows graphics applications, modern presentations, or Windows-based design work, our tool provides instant conversion while maintaining excellent quality. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited JPG files to EMF format with just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert JPG to EMF format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            EMF format is the modern Windows vector graphics format that offers improved features compared to WMF. It supports 32-bit graphics, better color support, and improved scalability. EMF is ideal for Windows applications, Microsoft Office documents, and modern Windows-based design tools that require high-quality vector graphics with enhanced features.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What's the difference between WMF and EMF?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            EMF (Enhanced Metafile) is the modern successor to WMF (Windows Metafile). EMF offers 32-bit graphics support, improved color depth, better scalability, and enhanced features compared to WMF. EMF provides higher quality and more advanced capabilities, making it the preferred choice for modern Windows applications and Microsoft Office documents.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can I use EMF files in Microsoft Office?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, EMF files are fully compatible with Microsoft Office applications including Word, PowerPoint, and Excel. You can insert EMF files directly into Office documents, and they will display and print with high quality. EMF format is particularly well-suited for modern Office applications and provides better quality than WMF.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Is there a file size limit for conversion?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            While there's no strict file size limit, we recommend JPG files under 10MB for optimal performance. Larger files may take longer to process, but the tool can handle images up to 50MB. The conversion maintains the original image dimensions, so the output EMF will have the same resolution as your input JPG.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will my image quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our converter preserves the original image quality during conversion. EMF format supports 32-bit graphics and improved color depth, so the conversion process maintains all visual quality, colors, and details from your original JPG image. The EMF file will have excellent quality, ensuring you get a high-quality output ready for Windows applications and Microsoft Office use.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            processedImageData = canvas.toDataURL('image/png');
+                            document.getElementById('processedPreview').innerHTML = `<img src="${processedImageData}" alt="EMF Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) {
+                    const link = document.createElement('a');
+                    link.href = processedImageData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.emf';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

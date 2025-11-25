@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free JPG to WEBP Converter - Convert JPG images to modern WEBP format.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>JPG to WEBP Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI JPG to WEBP Converter</h1>
+            <p>Convert JPG images to modern WEBP format.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your JPG image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original JPG</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original JPG will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted WEBP</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Converted WEBP will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to WEBP</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download WEBP</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use JPG to WEBP Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload JPG Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your JPG or JPEG image file. Our converter accepts all standard JPG formats and will display your image in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to WEBP</h4>
+                            <p class="card-text">Click the "Convert to WEBP" button to start the conversion process. Our converter will transform your JPG image to modern WEBP format, which offers superior compression and quality compared to traditional formats.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download WEBP File</h4>
+                            <p class="card-text">Once conversion is complete, preview your WEBP image in the output area. WEBP format offers smaller file sizes with better quality. If satisfied, click the "Download WEBP" button to save your converted file.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About JPG to WEBP Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="JPG to WEBP.jpeg" alt="JPG to WEBP Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your JPG images to modern WEBP format with our free online JPG to WEBP converter. WEBP is a next-generation image format developed by Google that provides superior compression compared to JPG and PNG, resulting in smaller file sizes while maintaining excellent image quality. This makes WEBP ideal for web use, where faster loading times and reduced bandwidth are crucial for optimal user experience and SEO performance.</p>
+                    <p>Our converter uses advanced image processing algorithms to ensure your converted WEBP files maintain the original image quality, colors, and clarity while achieving significant file size reduction. WEBP format supports both lossy and lossless compression, transparency, and animation, making it a versatile format for modern web development. Whether you're optimizing images for websites, improving page load speeds, or reducing storage space, our tool provides instant conversion without any quality loss. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited JPG files to WEBP format and experience the benefits of modern web image technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert JPG to WEBP format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            WEBP format offers superior compression compared to JPG, typically reducing file sizes by 25-35% while maintaining the same or better image quality. This results in faster website loading times, reduced bandwidth usage, improved SEO rankings, and better user experience. WEBP is supported by all modern browsers and is becoming the standard for web images.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will the converted WEBP file be smaller than the original JPG?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, in most cases, WEBP files are 25-35% smaller than equivalent JPG files while maintaining the same visual quality. This significant file size reduction makes WEBP ideal for web use, as it reduces bandwidth usage and improves page load speeds, which are important factors for SEO and user experience.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Is WEBP format supported by all browsers?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            WEBP is supported by all modern browsers including Chrome, Firefox, Edge, Safari, and Opera. Older browsers may not support WEBP, so if you need maximum compatibility, you may want to provide JPG fallbacks. However, for most modern websites, WEBP is the recommended format due to its superior compression and quality.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Will image quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our converter preserves the original image quality during conversion. WEBP format uses advanced compression algorithms that maintain visual quality while reducing file size. In many cases, WEBP images look identical or even better than the original JPG while being significantly smaller in file size.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Can I convert multiple JPG files to WEBP at once?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Currently, our tool processes one image at a time to ensure optimal quality and processing speed. However, the conversion is very fast (typically 1-3 seconds), so you can convert multiple images quickly by processing them one after another. Each conversion maintains the original image quality while creating smaller, optimized WEBP files.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            processedImageData = canvas.toDataURL('image/webp');
+                            document.getElementById('processedPreview').innerHTML = `<img src="${processedImageData}" alt="WEBP" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData && currentFile) {
+                    const link = document.createElement('a');
+                    link.href = processedImageData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.webp';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Video to WMV Converter - Convert videos to Windows Media Video WMV format.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>Video to WMV Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Video to WMV</h1>
+            <p>Convert videos to Windows Media Video WMV format.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your video here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Video</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Original video will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted WMV</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Converted WMV will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to WMV</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download WMV</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use Video to WMV Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Video File</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your video file. Our converter supports various video formats including MP4, MOV, AVI, MKV, FLV, WEBM, and more. The video will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to WMV</h4>
+                            <p class="card-text">Click the "Convert to WMV" button to start the conversion process. Our AI-powered converter will transform your video to Windows Media Video WMV format, which is optimized for Windows systems and Microsoft applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download WMV File</h4>
+                            <p class="card-text">Once conversion is complete, preview your WMV video in the output area. If satisfied, click the "Download WMV" button to save your converted video file to your device in WMV format for Windows compatibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About Video to WMV Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="WMV.jpeg" alt="Video to WMV Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your videos to Windows Media Video WMV format effortlessly with our free online Video to WMV converter. This powerful tool enables you to transform videos from various formats into WMV format, which is Microsoft's proprietary video format optimized for Windows systems. WMV format offers excellent compression, good quality, and is ideal for Windows Media Player, Microsoft applications, and Windows-based workflows. The format provides efficient compression while maintaining good video quality, making it perfect for streaming, sharing, and storing videos on Windows systems.</p>
+                    <p>Our converter uses advanced video processing algorithms to ensure your converted WMV files maintain the original video quality, audio synchronization, and all video properties. WMV format uses Microsoft's advanced codec technology to achieve good compression ratios while maintaining quality, resulting in smaller file sizes compared to uncompressed formats. The format is particularly useful for Windows users, Microsoft Office integration, Windows Media Player compatibility, and applications that specifically require WMV format. Whether you need WMV format for Windows compatibility, Microsoft applications, efficient video storage, or Windows-based media workflows, our tool provides instant conversion while maintaining excellent quality. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited videos to WMV format with just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert videos to WMV format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            WMV format is optimized for Windows systems and Microsoft applications. It offers excellent compression, good quality, and is ideal for Windows Media Player, Microsoft Office integration, and Windows-based workflows. WMV format provides efficient compression while maintaining quality, making it perfect for Windows users who need optimized video files.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will the video quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our converter preserves the original video quality during conversion. The conversion process maintains video resolution, frame rate, audio quality, and all video properties. WMV format uses advanced codec technology to maintain excellent quality while providing efficient compression.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can I play WMV files on non-Windows devices?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            WMV files can be played on various platforms with appropriate media players, though support may vary. While WMV is optimized for Windows, many media players on Mac, Linux, and mobile devices support WMV format. However, for maximum compatibility across all devices, MP4 format might be more universal.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            How long does video conversion take?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Processing time varies based on video length, resolution, and file size. Short videos (under 1 minute) typically convert in 1-3 minutes, while longer videos may take 5-15 minutes. The conversion process re-encodes the video, so processing time depends on video complexity and your device's performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will the audio be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! The conversion process preserves audio quality, synchronization, and all audio tracks. Your converted WMV file will have the same audio quality and tracks as the original video, ensuring perfect audio-video synchronization in the output file.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedVideoData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'video');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        processedVideoData = e.target.result;
+                        document.getElementById('processedPreview').innerHTML = `<video src="${processedVideoData}" controls style="max-width: 100%; max-height: 100%;"></video>`;
+                        document.getElementById('downloadBtn').disabled = false;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedVideoData && currentFile) {
+                    const link = document.createElement('a');
+                    link.href = processedVideoData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.wmv';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

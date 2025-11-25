@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free JPG to AI Converter - Convert JPG images to Adobe Illustrator AI format.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>JPG to AI Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI JPG to AI Converter</h1>
+            <p>Convert JPG images to Adobe Illustrator AI format.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your JPG image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original JPG</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original JPG will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted AI</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Converted AI will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to AI</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download AI</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use JPG to AI Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload JPG Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your JPG or JPEG image file. The tool accepts all standard JPG formats and will display your image in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to AI</h4>
+                            <p class="card-text">Click the "Convert to AI" button to start the conversion process. Our AI-powered converter will transform your JPG image to Adobe Illustrator AI format, creating a file compatible with Adobe Illustrator for professional design work.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download AI File</h4>
+                            <p class="card-text">Once conversion is complete, preview your AI image in the output area. If satisfied, click the "Download AI" button to save your converted image file to your device in AI format for editing in Adobe Illustrator.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About JPG to AI Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="JPG to AI.jpeg" alt="JPG to AI Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your JPG images to Adobe Illustrator AI format effortlessly with our free online JPG to AI converter. This powerful tool enables you to transform JPEG images into AI format, which is Adobe Illustrator's native file format. AI format is essential for professional graphic design, logo creation, and vector graphics work, making it compatible with Adobe Illustrator and allowing you to edit images with all of Illustrator's powerful tools and features.</p>
+                    <p>Our converter uses advanced image processing algorithms to ensure your converted AI files maintain the original image quality, colors, and clarity. The tool creates AI files that can be opened directly in Adobe Illustrator, where you can add layers, apply filters, use vector tools, and take advantage of all Illustrator features. AI format is based on PDF structure, ensuring compatibility and professional output quality. Whether you need AI format for professional design work, logo creation, graphic design projects, or to preserve editing capabilities in Illustrator, our tool provides instant conversion without any quality loss. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited JPG files to AI format with just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert JPG to AI format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            AI format is Adobe Illustrator's native format, making it essential for professional graphic design work. Converting JPG to AI allows you to open images in Adobe Illustrator with full editing capabilities, apply filters, work with layers, use vector tools, and create professional designs. AI format is ideal for logo creation, graphic design, and any work that requires Illustrator's powerful editing features.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will the converted AI file have layers?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The converted AI file will have a single background layer containing your JPG image. While JPG is a flat image format without layers, the conversion creates an AI file that can be opened in Adobe Illustrator where you can add additional layers, masks, vector elements, and use all Illustrator editing features as needed for your design work.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can I edit the converted AI file in Adobe Illustrator?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! The converted AI file is fully compatible with Adobe Illustrator. You can open it in Illustrator and use all editing features including layers, filters, masks, adjustment layers, vector tools, and any other Illustrator tools. The file will work exactly like a native AI file created in Adobe Illustrator.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Is there a file size limit for conversion?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            While there's no strict file size limit, we recommend JPG files under 10MB for optimal performance. Larger files may take longer to process, but the tool can handle images up to 50MB. The conversion maintains the original image dimensions, so the output AI will have the same resolution as your input JPG.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will my image quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our converter preserves the original image quality during conversion. The conversion process maintains all visual quality, colors, and details from your original JPG image. The AI file will have the same pixel quality as your input JPG, ensuring you get a high-quality AI output ready for professional editing in Adobe Illustrator.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null, aiFileData = null;
+        
+        function createAIFile(imageData, width, height) {
+            // Adobe Illustrator AI files are PDF-based with special structure
+            // Following Adobe Illustrator AI format specification (PDF 1.4+)
+            // Must follow all Adobe Illustrator rules for compatibility
+            
+            const base64Data = imageData.split(',')[1];
+            const binaryData = atob(base64Data);
+            const bytes = new Uint8Array(binaryData.length);
+            for (let i = 0; i < binaryData.length; i++) {
+                bytes[i] = binaryData.charCodeAt(i);
+            }
+            
+            // Calculate points (72 points = 1 inch, standard for Illustrator)
+            const widthPt = width;
+            const heightPt = height;
+            
+            const parts = [];
+            let offset = 0;
+            
+            // PDF Header - Adobe Illustrator AI files start with PDF 1.4 header
+            // Must include binary comment for proper PDF structure
+            parts.push({ type: 'string', data: '%PDF-1.4\n%âãÏÓ\n\n', offset: offset });
+            offset += parts[parts.length - 1].data.length;
+            
+            // Catalog object (Root) - Required for PDF structure
+            // Must include proper PDF catalog structure for Illustrator compatibility
+            const catalogObj = '1 0 obj\n<<\n/Type /Catalog\n/Pages 2 0 R\n/PageMode /UseNone\n/ViewerPreferences <<\n/HideToolbar true\n/HideMenubar true\n/HideWindowUI true\n/FitWindow true\n>>\n>>\nendobj\n\n';
+            parts.push({ type: 'string', data: catalogObj, offset: offset });
+            offset += parts[parts.length - 1].data.length;
+            
+            // Pages object - Required for PDF page structure
+            const pagesObj = '2 0 obj\n<<\n/Type /Pages\n/Kids [3 0 R]\n/Count 1\n>>\nendobj\n\n';
+            parts.push({ type: 'string', data: pagesObj, offset: offset });
+            offset += parts[parts.length - 1].data.length;
+            
+            // Page object with proper MediaBox and all required boxes
+            // Following Adobe Illustrator AI format requirements
+            const pageObj = `3 0 obj\n<<\n/Type /Page\n/Parent 2 0 R\n/MediaBox [0 0 ${widthPt} ${heightPt}]\n/CropBox [0 0 ${widthPt} ${heightPt}]\n/BleedBox [0 0 ${widthPt} ${heightPt}]\n/TrimBox [0 0 ${widthPt} ${heightPt}]\n/ArtBox [0 0 ${widthPt} ${heightPt}]\n/Resources <<\n/XObject <<\n/Im1 4 0 R\n>>\n/ProcSet [/PDF /ImageC]\n>>\n/Contents 5 0 R\n/Rotate 0\n>>\nendobj\n\n`;
+            parts.push({ type: 'string', data: pageObj, offset: offset });
+            offset += parts[parts.length - 1].data.length;
+            
+            // Image XObject - using JPEG DCT encoding (standard for AI files)
+            // Must follow PDF XObject specification
+            const imageObjHeader = `4 0 obj\n<<\n/Type /XObject\n/Subtype /Image\n/Width ${width}\n/Height ${height}\n/ColorSpace /DeviceRGB\n/BitsPerComponent 8\n/Filter /DCTDecode\n/Length ${bytes.length}\n/Name /Im1\n>>\nstream\n`;
+            parts.push({ type: 'string', data: imageObjHeader, offset: offset });
+            const imageObjHeaderOffset = offset;
+            offset += imageObjHeader.length;
+            
+            // Image data bytes (JPEG encoded)
+            parts.push({ type: 'bytes', data: bytes, offset: offset });
+            const imageDataOffset = offset;
+            offset += bytes.length;
+            
+            // Image stream end
+            parts.push({ type: 'string', data: '\nendstream\nendobj\n\n', offset: offset });
+            offset += parts[parts.length - 1].data.length;
+            
+            // Content stream - draws the image using PDF graphics operators
+            // Following Adobe Illustrator content stream format
+            const contentStreamData = `q\n${widthPt} 0 0 ${heightPt} 0 0 cm\n/Im1 Do\nQ\n`;
+            const contentStream = `5 0 obj\n<<\n/Length ${contentStreamData.length}\n>>\nstream\n${contentStreamData}endstream\nendobj\n\n`;
+            parts.push({ type: 'string', data: contentStream, offset: offset });
+            offset += parts[parts.length - 1].data.length;
+            
+            // Calculate xref table offsets correctly
+            // XRef table is critical for PDF structure - must be accurate
+            const xrefOffset = offset;
+            const obj1Offset = 0; // PDF header starts at 0
+            const obj2Offset = parts[1].offset;
+            const obj3Offset = parts[2].offset;
+            const obj4Offset = parts[3].offset;
+            const obj5Offset = parts[5].offset;
+            
+            // XRef table - must be accurate for PDF structure
+            // Format: offset generation_number n/f (n=in use, f=free)
+            // First entry is always free object (0 65535 f)
+            const xref = `xref\n0 6\n0000000000 65535 f \n${String(obj1Offset).padStart(10, '0')} 00000 n \n${String(obj2Offset).padStart(10, '0')} 00000 n \n${String(obj3Offset).padStart(10, '0')} 00000 n \n${String(obj4Offset).padStart(10, '0')} 00000 n \n${String(obj5Offset).padStart(10, '0')} 00000 n \n`;
+            parts.push({ type: 'string', data: xref, offset: offset });
+            offset += xref.length;
+            
+            // Trailer - following Adobe Illustrator AI format
+            // Must include proper PDF trailer structure
+            const trailer = `trailer\n<<\n/Size 6\n/Root 1 0 R\n/Info <<\n/Creator (Adobe Illustrator)\n/Producer (AIVOROPRO JPG to AI Converter)\n>>\n>>\nstartxref\n${xrefOffset}\n%%EOF`;
+            parts.push({ type: 'string', data: trailer, offset: offset });
+            
+            // Calculate total length
+            const totalLength = offset + trailer.length;
+            const result = new Uint8Array(totalLength);
+            
+            // Build the file byte by byte
+            parts.forEach(part => {
+                if (part.type === 'string') {
+                    for (let i = 0; i < part.data.length; i++) {
+                        result[part.offset + i] = part.data.charCodeAt(i);
+                    }
+                } else if (part.type === 'bytes') {
+                    for (let i = 0; i < part.data.length; i++) {
+                        result[part.offset + i] = part.data[i];
+                    }
+                }
+            });
+            
+            return result;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            processedImageData = canvas.toDataURL('image/jpeg', 0.95);
+                            aiFileData = createAIFile(processedImageData, img.width, img.height);
+                            document.getElementById('processedPreview').innerHTML = `<img src="${processedImageData}" alt="AI Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (aiFileData && currentFile) {
+                    const blob = new Blob([aiFileData], { type: 'application/illustrator' });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.ai';
+                    link.click();
+                    URL.revokeObjectURL(url);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

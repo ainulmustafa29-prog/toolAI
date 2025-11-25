@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free JPG to BMP Converter - Convert JPG images to BMP bitmap format.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>JPG to BMP Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI JPG to BMP Converter</h1>
+            <p>Convert JPG images to BMP bitmap format.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your JPG image here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original JPG</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Original JPG will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted BMP</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-image"></i><p>Converted BMP will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to BMP</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download BMP</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use JPG to BMP Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload JPG Image</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your JPG or JPEG image file. The tool accepts all standard JPG formats and will display your image in the preview area once uploaded successfully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to BMP</h4>
+                            <p class="card-text">Click the "Convert to BMP" button to start the conversion process. Our AI-powered converter will transform your JPG image to BMP bitmap format, creating an uncompressed image format ideal for Windows compatibility and professional use.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download BMP File</h4>
+                            <p class="card-text">Once conversion is complete, preview your BMP image in the output area. If satisfied, click the "Download BMP" button to save your converted image file to your device in BMP format for Windows compatibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About JPG to BMP Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="JPG to BMP.jpeg" alt="JPG to BMP Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your JPG images to BMP bitmap format effortlessly with our free online JPG to BMP converter. This powerful tool enables you to transform JPEG images into BMP format, which is an uncompressed bitmap image format widely used in Windows applications. BMP format stores image data without compression, ensuring perfect quality preservation, making it ideal for applications that require uncompressed image data or maximum compatibility with Windows systems.</p>
+                    <p>Our converter uses advanced image processing algorithms to ensure your converted BMP files maintain the original image quality, colors, and clarity. BMP format is uncompressed, meaning no data is lost during the conversion process, resulting in perfect quality preservation. While BMP files are typically larger than compressed formats like JPG, they offer the advantage of being completely uncompressed and widely compatible with Windows applications, graphics software, and professional tools. Whether you need BMP format for Windows compatibility, professional graphics work, applications requiring uncompressed images, or maximum quality preservation, our tool provides instant conversion without any quality loss. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited JPG files to BMP format with just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert JPG to BMP format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            BMP format offers uncompressed image storage, ensuring perfect quality preservation without any compression artifacts. It's widely compatible with Windows applications, graphics software, and professional tools. BMP is ideal when you need uncompressed image data, maximum quality preservation, or compatibility with Windows-based applications that require BMP format.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will the converted BMP file be larger than the original JPG?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, BMP files are typically much larger than JPG files because BMP uses no compression while JPG uses lossy compression. BMP files store every pixel without compression, resulting in larger file sizes. However, this ensures perfect quality preservation without any compression artifacts or quality loss.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Can I convert multiple JPG files at once?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Currently, our tool processes one image at a time to ensure optimal quality and processing speed. However, the conversion is very fast, so you can convert multiple images quickly by processing them one after another. Each conversion takes just a few seconds to complete.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Is there a file size limit for conversion?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            While there's no strict file size limit, we recommend JPG files under 10MB for optimal performance. Larger files may take longer to process, but the tool can handle images up to 50MB. Note that BMP files will be significantly larger than the original JPG due to the uncompressed format.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will my image quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! BMP format is uncompressed, so your converted BMP file will maintain perfect quality without any compression artifacts. The conversion process preserves all visual quality, colors, and details from your original JPG image, ensuring you get a high-quality BMP output with zero quality loss.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedImageData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'image');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = new Image();
+                        img.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width; canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            processedImageData = canvas.toDataURL('image/png');
+                            document.getElementById('processedPreview').innerHTML = `<img src="${processedImageData}" alt="BMP Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                            document.getElementById('downloadBtn').disabled = false;
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedImageData) {
+                    const link = document.createElement('a');
+                    link.href = processedImageData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.bmp';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

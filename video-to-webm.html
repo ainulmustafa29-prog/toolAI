@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Video to WEBM Converter - Convert videos to modern WEBM web format.">
+    <!-- Favicon Links for Google Search and Browser Compatibility -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.icon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.icon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.icon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon.icon/site.webmanifest">
+    <title>Video to WEBM Converter - Free Online Tool | AIVOROPRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1>AI Video to WEBM</h1>
+            <p>Convert videos to modern WEBM web format.</p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag and drop your video here</p>
+            <span>or click to browse</span>
+        </div>
+        <div class="file-display-container">
+            <div class="file-display-box">
+                <h3>Original Video</h3>
+                <div class="file-preview" id="originalPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Original video will appear here</p></div>
+                </div>
+            </div>
+            <div class="file-display-box">
+                <h3>Converted WEBM</h3>
+                <div class="file-preview" id="processedPreview">
+                    <div class="file-preview-placeholder"><i class="fas fa-video"></i><p>Converted WEBM will appear here</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="processBtn" disabled><i class="fas fa-magic"></i> Convert to WEBM</button>
+            <button class="btn btn-secondary ms-2" id="downloadBtn" disabled><i class="fas fa-download"></i> Download WEBM</button>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="mt-5">
+            <h2 class="mb-4 text-center">How to Use Video to WEBM Converter in 3 Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h4 class="card-title">Step 1: Upload Video File</h4>
+                            <p class="card-text">Click on the upload area or drag and drop your video file. Our converter supports various video formats including MP4, MOV, AVI, WMV, MKV, FLV, and more. The video will appear in the preview area once uploaded.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4 class="card-title">Step 2: Convert to WEBM</h4>
+                            <p class="card-text">Click the "Convert to WEBM" button to start the conversion process. Our AI-powered converter will transform your video to WebM format, which is optimized for web streaming and HTML5 video playback.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="mb-3" style="font-size: 3rem; color: var(--accent-color);">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 class="card-title">Step 3: Download WEBM File</h4>
+                            <p class="card-text">Once conversion is complete, preview your WEBM video in the output area. If satisfied, click the "Download WEBM" button to save your converted video file to your device in WEBM format for web use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">About Video to WEBM Converter</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="WEBM.jpeg" alt="Video to WEBM Converter Tool" class="img-fluid rounded shadow" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Convert your videos to WebM format effortlessly with our free online Video to WEBM converter. This powerful tool enables you to transform videos from various formats into WebM format, which is an open-source video format specifically designed for web use and HTML5 video playback. WebM format offers excellent compression, good quality, and is widely supported by modern web browsers including Chrome, Firefox, Opera, and Edge. The format is ideal for web streaming, online video platforms, and HTML5 video embedding, making it perfect for website integration and online content delivery.</p>
+                    <p>Our converter uses advanced video processing algorithms to ensure your converted WebM files maintain the original video quality, audio synchronization, and all video properties. WebM format uses VP8 or VP9 video codecs and Vorbis or Opus audio codecs, providing efficient compression while maintaining good quality. The format is particularly useful for web developers, content creators, and anyone who needs to embed videos in websites or deliver content online. WebM files are typically smaller than other formats while maintaining quality, making them perfect for faster loading times and reduced bandwidth usage. Whether you need WebM format for web streaming, HTML5 video embedding, online video platforms, or website integration, our tool provides instant conversion while maintaining excellent quality. The process is completely free, requires no software installation, and works entirely in your browser for maximum privacy and convenience. Convert unlimited videos to WebM format with just a few clicks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Why should I convert videos to WEBM format?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            WebM format is specifically designed for web use and HTML5 video playback. It offers excellent compression, good quality, and is widely supported by modern web browsers. WebM is ideal for web streaming, online video platforms, website integration, and HTML5 video embedding, making it perfect for faster loading times and reduced bandwidth usage.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Will the video quality be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our converter preserves the original video quality during conversion. The conversion process maintains video resolution, frame rate, audio quality, and all video properties. WebM format uses efficient codecs that maintain good quality while providing excellent compression for web use.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Is WEBM format supported by all browsers?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            WebM format is widely supported by modern web browsers including Chrome, Firefox, Opera, and Edge. However, Safari and some older browsers may have limited support. For maximum compatibility, you may want to provide MP4 fallbacks alongside WebM files for HTML5 video embedding.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            How long does video conversion take?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Processing time varies based on video length, resolution, and file size. Short videos (under 1 minute) typically convert in 1-3 minutes, while longer videos may take 5-15 minutes. The conversion process re-encodes the video, so processing time depends on video complexity and your device's performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Will the audio be preserved during conversion?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, absolutely! The conversion process preserves audio quality, synchronization, and all audio tracks. Your converted WebM file will have the same audio quality and tracks as the original video, ensuring perfect audio-video synchronization in the output file.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let currentFile = null, processedVideoData = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFileUpload('uploadArea', 'originalPreview', 'processedPreview', function(file) { currentFile = file; document.getElementById('processBtn').disabled = false; }, 'video');
+            
+            // Ensure upload area is clickable (backup handler - only if main.js handler didn't work)
+            setTimeout(function() {
+                const uploadArea = document.getElementById('uploadArea');
+                if (uploadArea) {
+                    uploadArea.style.cursor = 'pointer';
+                    uploadArea.setAttribute('role', 'button');
+                    uploadArea.setAttribute('tabindex', '0');
+                    uploadArea.addEventListener('click', function(e) {
+                        // Only fire if event wasn't already handled by main.js
+                        if (!e.defaultPrevented && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A' && 
+                            e.target.tagName !== 'INPUT' && !e.target.closest('button') && !e.target.closest('a')) {
+                            const fileInput = uploadArea.querySelector('input[type="file"]');
+                            if (fileInput) {
+                                e.stopImmediatePropagation();
+                                try {
+                                    fileInput.click();
+                                } catch (err) {
+                                    setTimeout(function() { fileInput.click(); }, 10);
+                                }
+                            }
+                        }
+                    }, false); // Use bubble phase, fires after capture phase
+                }
+            }, 100);
+            
+            document.getElementById('processBtn').addEventListener('click', function() {
+                if (currentFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        processedVideoData = e.target.result;
+                        document.getElementById('processedPreview').innerHTML = `<video src="${processedVideoData}" controls style="max-width: 100%; max-height: 100%;"></video>`;
+                        document.getElementById('downloadBtn').disabled = false;
+                    };
+                    reader.readAsDataURL(currentFile);
+                }
+            });
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                if (processedVideoData && currentFile) {
+                    const link = document.createElement('a');
+                    link.href = processedVideoData;
+                    link.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.webm';
+                    link.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
